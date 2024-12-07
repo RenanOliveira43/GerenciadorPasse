@@ -13,11 +13,11 @@
     <center>
         <VBox alignment="CENTER" spacing="20.0">
             <!-- Título -->
-            <Label styleClass="title" text="Bem-vindo!">
+            <Label alignment="CENTER" styleClass="title" text="Bem-vindo!">
             <VBox.margin>
                <Insets />
             </VBox.margin></Label>
-            <Label fx:id="label" text="Escolha seu tipo de passagem">
+            <Label fx:id="label" alignment="CENTER" text="Escolha seu tipo de passagem" textAlignment="JUSTIFY">
             <VBox.margin>
                <Insets top="5.0" />
             </VBox.margin>
@@ -38,6 +38,13 @@
         </VBox>
     </center>
     <bottom>
-        <StackPane alignment="CENTER" prefHeight="50.0" styleClass="footer" />
+        <StackPane alignment="CENTER" prefHeight="50.0" styleClass="footer">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#carregarTelaPrincipal" prefHeight="30.0" prefWidth="84.0" stylesheets="@style.css" text="Next">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Button>
+         </children></StackPane>
     </bottom>
 </View>
