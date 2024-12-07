@@ -33,6 +33,10 @@ jlink {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+
+    maven {
+        url 'https://nexus.gluonhq.com/nexus/content/repositories/releases/'
+    }
 }
 
 dependencies {
@@ -46,6 +50,8 @@ dependencies {
     
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+    
+    implementation 'com.gluonhq:charm-glisten:5.0.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -57,7 +63,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'Gerenciadorpasse.MainApp'
+    mainClass = 'gerenciadorpasse.MainApp'
 }
 
 tasks.named('test') {
