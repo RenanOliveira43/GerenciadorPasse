@@ -19,9 +19,9 @@
             <!-- Botões para escolher o tipo de passagem -->
             <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
                 <children>
-                    <Button fx:id="btnComum" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" text="Comum" />
-                    <Button fx:id="btnUniversitario" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" text="Universitário" />
-                    <Button fx:id="btnEstudante" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" text="Estudante" textAlignment="JUSTIFY" />
+                    <Button fx:id="btnComum" contentDisplay="CENTER" mnemonicParsing="false" onAction="#passagemComum" prefHeight="40.0" text="Comum" />
+                    <Button fx:id="btnUniversitario" contentDisplay="CENTER" mnemonicParsing="false" onAction="#passagemUniversitario" prefHeight="40.0" text="Universitário" />
+                    <Button fx:id="btnEstudante" contentDisplay="CENTER" mnemonicParsing="false" onAction="#passagemEstudante" prefHeight="40.0" text="Estudante" textAlignment="JUSTIFY" />
                 </children>
             <VBox.margin>
                <Insets bottom="5.0" left="7.0" right="7.0" top="5.0" />
