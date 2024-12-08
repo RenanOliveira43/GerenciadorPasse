@@ -16,8 +16,8 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="370.0" spacing="10.0" translateY="-100.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="160.0" text="Somar valor" />
-                  <Button mnemonicParsing="false" prefWidth="160.0" text="Subtrair R$ 2.73" />
+                  <Button mnemonicParsing="false" onAction="#somarValor" prefWidth="160.0" text="Somar valor" />
+                  <Button fx:id="buttonLabel" mnemonicParsing="false" onAction="#subtrairValorPassagem" prefWidth="160.0" text="Subtrair R$" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" translateY="-150.0">
@@ -38,7 +38,7 @@
                <children>
                   <VBox fx:id="vboxSaldo" prefHeight="200.0" prefWidth="165.0" stylesheets="@style.css" translateX="-10.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="150.0" text="Saldo disponível" textAlignment="JUSTIFY" translateX="-2.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="150.0" text="Saldo disponível">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
@@ -46,10 +46,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="saldo" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="139.0" text="R$ 999.99" textAlignment="JUSTIFY">
-                           <padding>
-                              <Insets right="36.0" />
-                           </padding>
+                        <Label fx:id="saldoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="139.0" text="R$ ">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -64,7 +61,7 @@
                   </VBox>
                   <VBox fx:id="vboxSaldo1" fillWidth="false" prefHeight="200.0" prefWidth="165.0" stylesheets="@style.css" translateX="10.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="150.0" text="Gasto no mês" textAlignment="JUSTIFY" translateX="-5.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="150.0" text="Gasto no mês">
                            <VBox.margin>
                               <Insets top="25.0" />
                            </VBox.margin>
@@ -72,10 +69,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="gasto" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="139.0" text="R$ 999.99" textAlignment="JUSTIFY">
-                           <padding>
-                              <Insets right="21.0" />
-                           </padding>
+                        <Label fx:id="gastoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="139.0" text="R$">
                            <font>
                               <Font size="15.0" />
                            </font>

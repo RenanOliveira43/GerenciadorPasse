@@ -21,7 +21,9 @@ public class Passagem {
     }
 
     public void subtrairValorPassagem() {
-        this.saldo -= this.tipoPassagem.getValor();
+        if (this.saldo >= this.tipoPassagem.getValor()){
+            this.saldo -= this.tipoPassagem.getValor();
+        }
     }
 
 
