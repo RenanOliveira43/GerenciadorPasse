@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 
 public class TelaInicialController {
     @FXML
-    public void carregarTelaPrincipal(){
-        MainApp.setScene("/telaPrincipal.fxml");
+    public void carregarTelaEscolhaPassagem(){
+        MainApp.setScene("/telaEscolhaPassagem.fxml");
     }
 }
