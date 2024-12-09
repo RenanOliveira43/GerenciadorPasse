@@ -16,7 +16,7 @@ public class Passagem {
         this.saldo += valor;
     }
 
-    public void adicionarValorPersonalizado(double valorPersonalizado) {
+    public void alterarParaValorPersonalizado(double valorPersonalizado) {
         this.saldo = valorPersonalizado;
     }
 
@@ -26,15 +26,18 @@ public class Passagem {
         }
     }
 
-
-
-
     public double getSaldo() {
         return saldo;
     }
 
     public double getGastoMes() {
         return gastoMes;
+    }
+
+    public void somarGastoMes(double gastoMes) {
+        if (this.saldo >= this.tipoPassagem.getValor()){
+            this.gastoMes += gastoMes;
+        }
     }
 
     public double getGastoTotal() {
