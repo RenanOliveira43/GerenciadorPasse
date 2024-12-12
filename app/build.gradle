@@ -11,6 +11,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version'0.1.0'
     id 'org.beryx.jlink' version '2.24.4'
     id 'com.android.application'
+    id 'com.android.library'
 }
 
 javafx {
