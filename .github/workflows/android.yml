@@ -30,6 +30,6 @@ jobs:
       with:
         # Artifact name
         name: Passe.apk
-        path: app/build/distributions/app.apk
+        path: ./app/build/distributions/app.apk
 
 
