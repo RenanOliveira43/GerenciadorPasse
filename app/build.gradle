@@ -10,7 +10,26 @@ plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version'0.1.0'
     id 'org.beryx.jlink' version '2.24.4'
-    id 'com.android.library'
+    'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.myapp"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 javafx {
@@ -33,6 +52,7 @@ jlink {
 
 repositories {
     // Use Maven Central for resolving dependencies.
+    google()
     mavenCentral()
 
     maven {
@@ -53,6 +73,8 @@ dependencies {
     implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
     
     implementation 'com.gluonhq:charm-glisten:5.0.0'
+    
+    classpath 'com.android.tools.build:gradle:8.1.1'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
