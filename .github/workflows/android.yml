@@ -30,6 +30,6 @@ jobs:
       with:
         # Artifact name
         name: # optional, default is artifact
-        path: app/build/output/teste.apk
+        path: app/build/output/
 
 
