@@ -9,9 +9,14 @@ public class User {
     protected boolean isFirstAccess;
     protected Passagem passagem;
 
-    public User() {
+    public User(String userName) {
         this.passagem = new Passagem();
         this.isFirstAccess = true;
+        this.userName = userName;
+    }
+
+    public User() {
+        
     }
 
     @XmlElement(name="userName")
