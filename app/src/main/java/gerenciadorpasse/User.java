@@ -1,5 +1,9 @@
 package gerenciadorpasse;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="usuario")
 public class User {
     protected String userName;
     protected boolean isFirstAccess;
@@ -10,10 +14,12 @@ public class User {
         this.isFirstAccess = true;
     }
 
+    @XmlElement(name="userName")
     public String getUserName() {
         return this.userName;
     }
 
+    @XmlElement(name="passagem")
     public Passagem getPassagem() {
         return this.passagem;
     }
@@ -22,6 +28,7 @@ public class User {
         this.passagem = passagem;
     }
 
+    @XmlElement(name="isFirstAccess")
     public boolean isFirstAccess() {
         return this.isFirstAccess;
     }
