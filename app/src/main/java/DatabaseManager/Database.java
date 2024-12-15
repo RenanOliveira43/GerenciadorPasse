@@ -23,6 +23,8 @@ import gerenciadorpasse.*;
 @XmlRootElement(name="database")
 public class Database {
     private List<User> users = new ArrayList<>();
+    private List<Passagem> passagens = new ArrayList<>();
+
     private final File file = new File("../app/data/database.xml");
 
     public Database(boolean load) {
@@ -41,9 +43,18 @@ public class Database {
         return users;
     }
 
+    @XmlElementWrapper(name="passagens")
+    @XmlElement(name="passagem")
+    public List<Passagem> getPassagens() {
+        return passagens;
+    }
+
     public void insert(Object object) {
         if (object instanceof User) {
             this.users.add((User)object);
+        }
+        else if (object instanceof Passagem) {
+            this.passagens.add((Passagem) object);
         }
         else {
             throw new UnsupportedObjectTypeException("Objeto invalido");
@@ -65,6 +76,9 @@ public class Database {
     public void update(Object object) {
         if (object instanceof User) {
             this.update((User)object, this.users);
+        }
+        else if (object instanceof Passagem){
+            this.update((Passagem)object, this.passagens);
         }
         else {
             throw new UnsupportedObjectTypeException("Objeto invalido");

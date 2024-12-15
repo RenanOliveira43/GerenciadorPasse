@@ -10,9 +10,9 @@ public class User {
     protected Passagem passagem;
 
     public User(String userName) {
+        this.userName = userName;
         this.passagem = new Passagem();
         this.isFirstAccess = true;
-        this.userName = userName;
     }
 
     public User() {
@@ -38,7 +38,7 @@ public class User {
         return this.isFirstAccess;
     }
 
-    public void setIsFirstAcess() {
-        this.isFirstAccess = false;
+    public void setIsFirstAcess(boolean bool) {
+        this.isFirstAccess = bool;
     }   
 }

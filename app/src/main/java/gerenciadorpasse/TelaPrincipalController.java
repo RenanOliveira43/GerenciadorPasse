@@ -16,9 +16,9 @@ public class TelaPrincipalController {
     
     @FXML
     public void initialize() {
-        saldoLabel.setText(String.format("R$ %.2f", TelaInicialController.user.passagem.getSaldo()));
-        gastoLabel.setText(String.format("R$ %.2f", TelaInicialController.user.passagem.getGastoMes()));
-        buttonLabel.setText(String.format("Subtrair R$ %.2f", TelaInicialController.user.passagem.getTipoPassagem().getValor()));
+        saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
+        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
+        buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(0).passagem.getTipoPassagem().getValor()));
     }
 
     @FXML
@@ -33,10 +33,11 @@ public class TelaPrincipalController {
             try {
                 double valor = Double.parseDouble(inputField.getText());
     
-                TelaInicialController.user.passagem.somarValor(valor);
+                MainApp.db.getUsers().get(0).passagem.somarValor(valor);
+                MainApp.db.update(MainApp.db.getUsers().get(0));
     
-                saldoLabel.setText(String.format("R$ %.2f", TelaInicialController.user.passagem.getSaldo()));
-    
+                saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
+
                 teste.getChildren().removeAll(inputField, confirmarButton);
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
@@ -56,9 +57,11 @@ public class TelaPrincipalController {
             try {
                 double valor = Double.parseDouble(inputField.getText());
     
-                TelaInicialController.user.passagem.alterarParaValorPersonalizado(valor);
+                MainApp.db.getUsers().get(0).passagem.alterarParaValorPersonalizado(valor);
     
-                saldoLabel.setText(String.format("R$ %.2f", TelaInicialController.user.passagem.getSaldo()));
+                saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
+
+                MainApp.db.update(MainApp.db.getUsers().get(0));
     
                 teste.getChildren().removeAll(inputField, confirmarButton);
             } catch (NumberFormatException e) {
@@ -69,11 +72,14 @@ public class TelaPrincipalController {
 
     @FXML
     private void subtrairValorPassagem() {
-        TelaInicialController.user.passagem.subtrairValorPassagem();;
-        TelaInicialController.user.passagem.somarGastoMes(TelaInicialController.user.passagem.getTipoPassagem().getValor());
+        MainApp.db.getUsers().get(0).passagem.subtrairValorPassagem();;
+        MainApp.db.getUsers().get(0).passagem.somarGastoMes(MainApp.db.getUsers().get(0).passagem.getTipoPassagem().getValor());
+
+        MainApp.db.update(MainApp.db.getUsers().get(0));
         
-        saldoLabel.setText(String.format("R$ %.2f", TelaInicialController.user.passagem.getSaldo()));
-        gastoLabel.setText(String.format("R$ %.2f", TelaInicialController.user.passagem.getGastoMes()));
+        saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
+        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
+
     }
 
     @FXML

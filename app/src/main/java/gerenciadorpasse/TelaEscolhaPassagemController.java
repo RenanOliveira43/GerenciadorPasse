@@ -10,16 +10,19 @@ public class TelaEscolhaPassagemController {
 
     @FXML
     public void passagemComum() {
-        TelaInicialController.user.passagem.setTipoPassagem(TipoPassagem.COMUM);
+        MainApp.db.getUsers().get(0).passagem.setTipoPassagem(TipoPassagem.COMUM);
+        MainApp.db.update(MainApp.db.getUsers().get(0));
     }
 
     @FXML
     public void passagemUniversitario() {
-        TelaInicialController.user.passagem.setTipoPassagem(TipoPassagem.UNIVERSITARIO);
+        MainApp.db.getUsers().get(0).passagem.setTipoPassagem(TipoPassagem.UNIVERSITARIO);
+        MainApp.db.update(MainApp.db.getUsers().get(0));
     }
 
     @FXML
     public void passagemEstudante() {
-        TelaInicialController.user.passagem.setTipoPassagem(TipoPassagem.ESTUDANTE);
+        MainApp.db.getUsers().get(0).passagem.setTipoPassagem(TipoPassagem.ESTUDANTE);
+        MainApp.db.update(MainApp.db.getUsers().get(0));
     }
 }

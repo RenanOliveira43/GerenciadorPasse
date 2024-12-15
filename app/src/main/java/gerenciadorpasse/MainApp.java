@@ -15,7 +15,14 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
-        setScene("/telaInicial.fxml");
+        
+        if (db.getUsers().isEmpty()) {
+            setScene("/telaInicial.fxml");
+        }
+        else {
+            setScene("/telaPrincipal.fxml");
+        }
+        
         primaryStage.show();
     }
 
