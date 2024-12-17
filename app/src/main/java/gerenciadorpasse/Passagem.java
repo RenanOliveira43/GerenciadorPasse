@@ -11,7 +11,9 @@ public class Passagem {
     protected double gastoTotal;
 
     public Passagem() {
-
+        this.saldo = 0.0;
+        this.gastoMes = 0.0;
+        this.gastoTotal = 0.0;
     }
 
     public void somarValor(double valor) {
@@ -23,7 +25,7 @@ public class Passagem {
     }
 
     public void subtrairValorPassagem() {
-        if (this.saldo >= this.tipoPassagem.getValor()){
+        if (this.saldo >= this.tipoPassagem.getValor()) {
             this.saldo -= this.tipoPassagem.getValor();
         }
     }
@@ -39,7 +41,7 @@ public class Passagem {
     }
 
     public void somarGastoMes(double gastoMes) {
-        if (this.saldo >= this.tipoPassagem.getValor()){
+        if (this.saldo >= this.tipoPassagem.getValor()) {
             this.gastoMes += gastoMes;
         }
     }
@@ -56,5 +58,17 @@ public class Passagem {
 
     public void setTipoPassagem(TipoPassagem tipoPassagem) {
         this.tipoPassagem = tipoPassagem;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setGastoMes(double gastoMes) {
+        this.gastoMes = gastoMes;
+    }
+
+    public void setGastoTotal(double gastoTotal) {
+        this.gastoTotal = gastoTotal;
     }
 }

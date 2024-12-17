@@ -70,3 +70,8 @@
     -fx-padding: 10px;  
     -fx-border-radius: 5px; 
 }
+
+#configButton {
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}

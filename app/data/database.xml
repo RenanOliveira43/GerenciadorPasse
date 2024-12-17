@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <database>
-    <passagens/>
     <usuarios>
         <usuario>
-            <isFirstAccess>true</isFirstAccess>
+            <isFirstAccess>false</isFirstAccess>
             <passagem>
-                <gastoMes>0.0</gastoMes>
+                <gastoMes>252.96999764442444</gastoMes>
                 <gastoTotal>0.0</gastoTotal>
-                <saldo>100.0</saldo>
+                <saldo>1.0E186</saldo>
                 <tipoPassagem>UNIVERSITARIO</tipoPassagem>
             </passagem>
-            <userName>renan</userName>
         </usuario>
     </usuarios>
 </database>

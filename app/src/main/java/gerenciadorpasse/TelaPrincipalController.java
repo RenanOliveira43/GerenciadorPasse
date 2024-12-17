@@ -11,6 +11,7 @@ public class TelaPrincipalController {
     @FXML private Label saldoLabel;
     @FXML private Label gastoLabel;
     @FXML private Button buttonLabel;
+    @FXML private Button configButton;
     @FXML private TextField valorTextField;
     @FXML private VBox teste;
     
@@ -19,6 +20,11 @@ public class TelaPrincipalController {
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
         gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
         buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(0).passagem.getTipoPassagem().getValor()));
+    }
+
+    @FXML
+    public void alterarTipoPassagem() {
+        MainApp.setScene("/telaEscolhaPassagem.fxml");
     }
 
     @FXML
@@ -58,10 +64,10 @@ public class TelaPrincipalController {
                 double valor = Double.parseDouble(inputField.getText());
     
                 MainApp.db.getUsers().get(0).passagem.alterarParaValorPersonalizado(valor);
+                MainApp.db.update(MainApp.db.getUsers().get(0));
     
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
 
-                MainApp.db.update(MainApp.db.getUsers().get(0));
     
                 teste.getChildren().removeAll(inputField, confirmarButton);
             } catch (NumberFormatException e) {
@@ -79,7 +85,6 @@ public class TelaPrincipalController {
         
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
         gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
-
     }
 
     @FXML

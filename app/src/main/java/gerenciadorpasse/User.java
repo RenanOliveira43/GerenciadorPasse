@@ -16,7 +16,6 @@ public class User {
     }
 
     public User() {
-        
     }
 
     @XmlElement(name="userName")
@@ -38,7 +37,7 @@ public class User {
         return this.isFirstAccess;
     }
 
-    public void setIsFirstAcess(boolean bool) {
+    public void setIsFirstAccess(boolean bool) {
         this.isFirstAccess = bool;
-    }   
+    }
 }
