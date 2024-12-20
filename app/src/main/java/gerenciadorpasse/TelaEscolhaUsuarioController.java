@@ -29,7 +29,7 @@ public class TelaEscolhaUsuarioController {
             label.setStyle("-fx-text-fill: white; -fx-font-size: 14px;");
         
             VBox userBox = new VBox(5);
-            userBox.setStyle("-fx-alignment: center;");
+            userBox.setStyle("-fx-alignment: center");
             userBox.getChildren().addAll(avatar, label);
         
             this.avatarContainer.getChildren().add(userBox);

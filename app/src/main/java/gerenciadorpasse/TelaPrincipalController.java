@@ -1,11 +1,17 @@
 package gerenciadorpasse;
 
+import java.net.URL;
+
 import com.gluonhq.charm.glisten.control.TextField;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 public class TelaPrincipalController {
     @FXML private Label saldoLabel;
@@ -14,6 +20,7 @@ public class TelaPrincipalController {
     @FXML private Button configButton;
     @FXML private TextField valorTextField;
     @FXML private VBox teste;
+    @FXML private HBox avatarContainer;
     
     private int indexUsuarioAtual = MainApp.indexUsuarioAtual;
 
@@ -22,6 +29,7 @@ public class TelaPrincipalController {
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
         gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
         buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor()));
+        loadUserAvatar();
     }
 
     @FXML
@@ -92,5 +100,26 @@ public class TelaPrincipalController {
     @FXML
     private void estatisticas() {
         //todo
+    }
+
+    @FXML
+    private void loadUserAvatar() {
+        URL avatarImageURL = getClass().getResource(MainApp.db.getUsers().get(indexUsuarioAtual).getPathAvatarImagem());
+        
+        if (avatarImageURL == null) {
+            System.out.println("Imagem não encontrada.");
+            return;
+        }
+
+        Circle avatar = new Circle(20);
+        Image avatarImage = new Image(avatarImageURL.toString());
+        avatar.setFill(new ImagePattern(avatarImage));
+        
+        avatarContainer.setStyle("-fx-alignment: center");
+        this.avatarContainer.getChildren().add(avatar);
+
+        avatar.setOnMouseClicked(event -> {
+            MainApp.setScene("/telaconfiguracao.fxml");
+        });
     }
 }

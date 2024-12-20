@@ -8,7 +8,7 @@ public class RandomAvatarImageGenerator {
 
     public RandomAvatarImageGenerator() {
         Random ran = new Random();
-        int idx = ran.nextInt(6);
+        int idx = ran.nextInt(imagesUrl.length);
 
         this.imageUrl = imagesUrl[idx];
     }
