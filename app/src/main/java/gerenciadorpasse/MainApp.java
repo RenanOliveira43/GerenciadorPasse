@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     protected static Stage stage;
     protected static Database db = new Database(true);
-    public static int indexUsuarioAtual = 0;
+    protected static int indexUsuarioAtual = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -36,14 +36,6 @@ public class MainApp extends Application {
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static int getIndexUsuarioAtual() {
-        return indexUsuarioAtual;
-    }
-
-    public static void setindexUsuarioAtual(int indexUsuarioAtual) {
-        MainApp.indexUsuarioAtual = indexUsuarioAtual;
     }
 
     public static void main(String[] args) {

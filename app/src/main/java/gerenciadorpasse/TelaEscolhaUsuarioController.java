@@ -37,7 +37,8 @@ public class TelaEscolhaUsuarioController {
             final int idx = i;
 
             avatar.setOnMouseClicked(event -> {
-                MainApp.setindexUsuarioAtual(idx);
+                //MainApp.setindexUsuarioAtual(idx);
+                MainApp.indexUsuarioAtual = idx;
                 MainApp.setScene("/telaPrincipal.fxml");
             });
         }
@@ -69,7 +70,7 @@ public class TelaEscolhaUsuarioController {
 
         avatar.setOnMouseClicked(event -> {
             if (MainApp.db.getUsers().size() < 4) {
-                MainApp.setindexUsuarioAtual(MainApp.getIndexUsuarioAtual() + 1);
+                MainApp.indexUsuarioAtual++;
                 MainApp.setScene("/telaInicial.fxml");
             }
             else {

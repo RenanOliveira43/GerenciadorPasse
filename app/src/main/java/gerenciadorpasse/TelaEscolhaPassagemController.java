@@ -3,7 +3,7 @@ package gerenciadorpasse;
 import javafx.fxml.FXML;
 
 public class TelaEscolhaPassagemController {
-    private int indexUsuarioAtual = MainApp.getIndexUsuarioAtual(); 
+    private int indexUsuarioAtual = MainApp.indexUsuarioAtual;
     
     @FXML
     public void carregarTelaPrincipal() {

@@ -15,7 +15,7 @@ public class TelaPrincipalController {
     @FXML private TextField valorTextField;
     @FXML private VBox teste;
     
-    private int indexUsuarioAtual = MainApp.getIndexUsuarioAtual(); 
+    private int indexUsuarioAtual = MainApp.indexUsuarioAtual;
 
     @FXML
     public void initialize() {

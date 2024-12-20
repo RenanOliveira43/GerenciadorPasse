@@ -2,26 +2,26 @@
 <database>
     <usuarios>
         <usuario>
-            <isFirstAccess>false</isFirstAccess>
+            <isFirstAccess>true</isFirstAccess>
             <passagem>
-                <gastoMes>5.460000038146973</gastoMes>
+                <gastoMes>2.7300000190734863</gastoMes>
                 <gastoTotal>0.0</gastoTotal>
-                <saldo>94.53999996185303</saldo>
+                <saldo>31.269999980926514</saldo>
                 <tipoPassagem>UNIVERSITARIO</tipoPassagem>
             </passagem>
-            <pathAvatarImagem>/meerkat.png</pathAvatarImagem>
+            <pathAvatarImagem>/panda.png</pathAvatarImagem>
             <userName>Renan</userName>
         </usuario>
         <usuario>
-            <isFirstAccess>false</isFirstAccess>
+            <isFirstAccess>true</isFirstAccess>
             <passagem>
-                <gastoMes>16.34999942779541</gastoMes>
+                <gastoMes>32.69999885559082</gastoMes>
                 <gastoTotal>0.0</gastoTotal>
-                <saldo>6.100000572204589</saldo>
+                <saldo>12.30000114440918</saldo>
                 <tipoPassagem>COMUM</tipoPassagem>
             </passagem>
-            <pathAvatarImagem>/rabbit.png</pathAvatarImagem>
-            <userName>mãe</userName>
+            <pathAvatarImagem>/dog.png</pathAvatarImagem>
+            <userName>Mãe</userName>
         </usuario>
     </usuarios>
 </database>
