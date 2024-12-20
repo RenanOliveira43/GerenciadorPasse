@@ -1,7 +1,0 @@
-{
-    "java.project.sourcePaths": [
-        "app/src/main/java/gerenciadorpasse"
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.compile.nullAnalysis.mode": "automatic"
-}
