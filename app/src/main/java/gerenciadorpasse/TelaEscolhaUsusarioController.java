@@ -12,27 +12,28 @@ import javafx.scene.shape.Circle;
 
 public class TelaEscolhaUsusarioController {
     @FXML private HBox avatarContainer;
+    protected static int usuarioAtul;
 
     @FXML 
     public void initialize() {
-        avatarContainer.getChildren().clear();
-    
-        for (User usuario : MainApp.db.getUsers()) {
+        for (int i = 0; i < MainApp.db.getUsers().size(); i++) {
+            User usuario = MainApp.db.getUsers().get(i);
+        
             URL avatarImageURL = getClass().getResource(usuario.getPathAvatarImage());
             
             Circle avatar = new Circle(25);
             Image avatarImage = new Image(avatarImageURL.toString());
             avatar.setFill(new ImagePattern(avatarImage));
-     
-            Label label = new Label(usuario.getUserName().toUpperCase()); 
+        
+            Label label = new Label(usuario.getUserName().toUpperCase());
             label.setStyle("-fx-text-fill: white; -fx-font-size: 14px;");
-    
-            VBox userBox = new VBox(5); 
+        
+            VBox userBox = new VBox(5);
             userBox.setStyle("-fx-alignment: center;");
             userBox.getChildren().addAll(avatar, label);
-    
+        
             this.avatarContainer.getChildren().add(userBox);
-    
+                        
             avatar.setOnMouseClicked(event -> {
                 MainApp.setScene("/telaPrincipal.fxml");
             });
@@ -40,7 +41,7 @@ public class TelaEscolhaUsusarioController {
 
         addNovoUser();
     }
-
+    
     @FXML
     private void addNovoUser() {
         URL avatarImageURL = getClass().getResource("/icons8-plus-48.png");
@@ -66,6 +67,10 @@ public class TelaEscolhaUsusarioController {
         avatar.setOnMouseClicked(event -> {
             MainApp.setScene("/telaInicial.fxml");
         });
+    }
+
+    public int getUsuarioAtul() {
+        return usuarioAtul;
     }
 }
 
