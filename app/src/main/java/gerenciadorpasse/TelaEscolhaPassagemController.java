@@ -5,7 +5,11 @@ import javafx.fxml.FXML;
 public class TelaEscolhaPassagemController {
     @FXML
     public void carregarTelaPrincipal() {
-        MainApp.setScene("/telaPrincipal.fxml");
+        try { 
+            MainApp.setScene("/telaPrincipal.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     } 
 
     @FXML

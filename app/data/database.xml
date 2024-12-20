@@ -4,11 +4,12 @@
         <usuario>
             <isFirstAccess>false</isFirstAccess>
             <passagem>
-                <gastoMes>252.96999764442444</gastoMes>
+                <gastoMes>412.23000288009644</gastoMes>
                 <gastoTotal>0.0</gastoTotal>
-                <saldo>1.0E186</saldo>
+                <saldo>802.42999792099</saldo>
                 <tipoPassagem>UNIVERSITARIO</tipoPassagem>
             </passagem>
+            <userName>renan</userName>
         </usuario>
     </usuarios>
 </database>

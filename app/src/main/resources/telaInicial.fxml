@@ -14,13 +14,15 @@
       <VBox alignment="CENTER">
          <children>
               <VBox alignment="CENTER" spacing="20.0">
-                  <!-- Título -->
                   <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title" text="Bem-vindo!">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Label>
-               <TextField fx:id="nameTextField" alignment="CENTER" promptText="Usuario" />
+               <TextField fx:id="nameTextField" alignment="CENTER" promptText="Usuario">
+                  <VBox.margin>
+                     <Insets left="35.0" right="35.0" />
+                  </VBox.margin></TextField>
               </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
                <children>

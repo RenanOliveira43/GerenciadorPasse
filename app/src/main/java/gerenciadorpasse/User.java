@@ -16,16 +16,17 @@ public class User {
     }
 
     public User() {
+        
     }
 
     @XmlElement(name="userName")
     public String getUserName() {
-        return this.userName;
+        return userName;
     }
 
     @XmlElement(name="passagem")
     public Passagem getPassagem() {
-        return this.passagem;
+        return passagem;
     }
 
     public void setPassagem(Passagem passagem) {
@@ -34,10 +35,14 @@ public class User {
 
     @XmlElement(name="isFirstAccess")
     public boolean isFirstAccess() {
-        return this.isFirstAccess;
+        return isFirstAccess;
     }
 
     public void setIsFirstAccess(boolean bool) {
         this.isFirstAccess = bool;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

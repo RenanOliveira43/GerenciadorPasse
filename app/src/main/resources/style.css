@@ -75,3 +75,12 @@
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
 }
+
+.text-field {
+    -fx-font-size: 12px;               
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #333333;       
+    -fx-padding: 7px;                 
+    -fx-border-radius: 20px;            
+    -fx-background-radius: 20px;    
+}
