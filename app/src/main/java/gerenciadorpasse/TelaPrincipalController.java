@@ -15,11 +15,13 @@ public class TelaPrincipalController {
     @FXML private TextField valorTextField;
     @FXML private VBox teste;
     
+    private int indexUsuarioAtual = MainApp.getIndexUsuarioAtual(); 
+
     @FXML
     public void initialize() {
-        saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
-        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
-        buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(0).passagem.getTipoPassagem().getValor()));
+        saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
+        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
+        buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor()));
     }
 
     @FXML
@@ -39,10 +41,10 @@ public class TelaPrincipalController {
             try {
                 double valor = Double.parseDouble(inputField.getText());
     
-                MainApp.db.getUsers().get(0).passagem.somarValor(valor);
-                MainApp.db.update(MainApp.db.getUsers().get(0));
+                MainApp.db.getUsers().get(indexUsuarioAtual).passagem.somarValor(valor);
+                MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
     
-                saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
+                saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
                 teste.getChildren().removeAll(inputField, confirmarButton);
             } catch (NumberFormatException e) {
@@ -63,10 +65,10 @@ public class TelaPrincipalController {
             try {
                 double valor = Double.parseDouble(inputField.getText());
     
-                MainApp.db.getUsers().get(0).passagem.alterarParaValorPersonalizado(valor);
-                MainApp.db.update(MainApp.db.getUsers().get(0));
+                MainApp.db.getUsers().get(indexUsuarioAtual).passagem.alterarParaValorPersonalizado(valor);
+                MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
     
-                saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
+                saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
     
                 teste.getChildren().removeAll(inputField, confirmarButton);
@@ -78,13 +80,13 @@ public class TelaPrincipalController {
 
     @FXML
     private void subtrairValorPassagem() {
-        MainApp.db.getUsers().get(0).passagem.subtrairValorPassagem();;
-        MainApp.db.getUsers().get(0).passagem.somarGastoMes(MainApp.db.getUsers().get(0).passagem.getTipoPassagem().getValor());
+        MainApp.db.getUsers().get(indexUsuarioAtual).passagem.subtrairValorPassagem();;
+        MainApp.db.getUsers().get(indexUsuarioAtual).passagem.somarGastoMes(MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor());
 
         MainApp.db.update(MainApp.db.getUsers().get(0));
         
-        saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
-        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
+        saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
+        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
     }
 
     @FXML

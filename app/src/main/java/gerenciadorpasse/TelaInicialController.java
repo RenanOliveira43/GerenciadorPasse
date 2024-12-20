@@ -19,7 +19,7 @@ public class TelaInicialController {
         user = new User(nameTextField.getText());
         
         String newImage = ran.getImageUrl();
-        while (newImage.equals(user.getPathAvatarImage())) {
+        while (newImage.equals(user.getPathAvatarImagem())) {
             newImage = ran.getImageUrl();
         }
         

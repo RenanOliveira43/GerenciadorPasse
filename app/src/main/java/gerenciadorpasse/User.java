@@ -31,7 +31,7 @@ public class User {
     }
 
     @XmlElement(name="pathAvatarImagem")
-    public String getPathAvatarImage() {
+    public String getPathAvatarImagem() {
         return pathAvatarImagem;
     }
 

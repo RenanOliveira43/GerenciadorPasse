@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="370.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciadorpasse.TelaEscolhaUsusarioController">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="370.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciadorpasse.TelaEscolhaUsuarioController">
     <center>
         <VBox alignment="CENTER" spacing="20.0">
             <Label alignment="CENTER" styleClass="title" text="Quem está usando?">
@@ -16,6 +16,7 @@
                 </VBox.margin>
             </Label>
          <HBox fx:id="avatarContainer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" />
+         <Label fx:id="errorLabel" alignment="CENTER" textAlignment="JUSTIFY" />
         </VBox>
     </center>
     <bottom>

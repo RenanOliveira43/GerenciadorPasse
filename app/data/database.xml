@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database>
+    <usuarios>
+        <usuario>
+            <isFirstAccess>false</isFirstAccess>
+            <passagem>
+                <gastoMes>5.460000038146973</gastoMes>
+                <gastoTotal>0.0</gastoTotal>
+                <saldo>94.53999996185303</saldo>
+                <tipoPassagem>UNIVERSITARIO</tipoPassagem>
+            </passagem>
+            <pathAvatarImagem>/meerkat.png</pathAvatarImagem>
+            <userName>Renan</userName>
+        </usuario>
+        <usuario>
+            <isFirstAccess>false</isFirstAccess>
+            <passagem>
+                <gastoMes>16.34999942779541</gastoMes>
+                <gastoTotal>0.0</gastoTotal>
+                <saldo>6.100000572204589</saldo>
+                <tipoPassagem>COMUM</tipoPassagem>
+            </passagem>
+            <pathAvatarImagem>/rabbit.png</pathAvatarImagem>
+            <userName>mãe</userName>
+        </usuario>
+    </usuarios>
+</database>

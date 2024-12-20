@@ -10,16 +10,16 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
-public class TelaEscolhaUsusarioController {
+public class TelaEscolhaUsuarioController {
     @FXML private HBox avatarContainer;
-    protected static int usuarioAtul;
+    @FXML private Label errorLabel;
 
     @FXML 
     public void initialize() {
         for (int i = 0; i < MainApp.db.getUsers().size(); i++) {
             User usuario = MainApp.db.getUsers().get(i);
         
-            URL avatarImageURL = getClass().getResource(usuario.getPathAvatarImage());
+            URL avatarImageURL = getClass().getResource(usuario.getPathAvatarImagem());
             
             Circle avatar = new Circle(25);
             Image avatarImage = new Image(avatarImageURL.toString());
@@ -33,8 +33,11 @@ public class TelaEscolhaUsusarioController {
             userBox.getChildren().addAll(avatar, label);
         
             this.avatarContainer.getChildren().add(userBox);
-                        
+            
+            final int idx = i;
+
             avatar.setOnMouseClicked(event -> {
+                MainApp.setindexUsuarioAtual(idx);
                 MainApp.setScene("/telaPrincipal.fxml");
             });
         }
@@ -65,12 +68,15 @@ public class TelaEscolhaUsusarioController {
         this.avatarContainer.getChildren().add(userBox);
 
         avatar.setOnMouseClicked(event -> {
-            MainApp.setScene("/telaInicial.fxml");
-        });
-    }
+            if (MainApp.db.getUsers().size() < 4) {
+                MainApp.setindexUsuarioAtual(MainApp.getIndexUsuarioAtual() + 1);
+                MainApp.setScene("/telaInicial.fxml");
+            }
+            else {
+                errorLabel.setText("Número máximo de usuários");
+            }
 
-    public int getUsuarioAtul() {
-        return usuarioAtul;
+        });
     }
 }
 
