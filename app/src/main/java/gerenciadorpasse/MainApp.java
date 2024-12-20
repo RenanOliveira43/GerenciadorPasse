@@ -20,7 +20,7 @@ public class MainApp extends Application {
             setScene("/telaInicial.fxml");
         }
         else {
-            setScene("/telaPrincipal.fxml");
+            setScene("/telaEscolhaUsuario.fxml");
         }
         
         primaryStage.show();

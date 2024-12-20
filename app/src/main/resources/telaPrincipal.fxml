@@ -36,7 +36,7 @@
     <bottom>
         <StackPane alignment="CENTER" prefHeight="50.0" styleClass="footer">
          <children>
-            <Button fx:id="configButton" mnemonicParsing="false" onAction="#alterarTipoPassagem" />
+            <Button fx:id="configButton" mnemonicParsing="false" onAction="#irTelaConfiguracao" />
          </children></StackPane>
     </bottom>
    <top>

@@ -8,6 +8,7 @@ public class User {
     protected String userName;
     protected boolean isFirstAccess;
     protected Passagem passagem;
+    protected String pathAvatarImagem;
 
     public User(String userName) {
         this.userName = userName;
@@ -27,6 +28,15 @@ public class User {
     @XmlElement(name="passagem")
     public Passagem getPassagem() {
         return passagem;
+    }
+
+    @XmlElement(name="pathAvatarImagem")
+    public String getPathAvatarImage() {
+        return pathAvatarImagem;
+    }
+
+    public void setPathAvatarImagem(String pathAvatarImagem) {
+        this.pathAvatarImagem = pathAvatarImagem;
     }
 
     public void setPassagem(Passagem passagem) {

@@ -1,64 +1,71 @@
 package gerenciadorpasse;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextInputDialog;
+import java.net.URL;
 
-import java.util.Optional;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 public class TelaEscolhaUsusarioController {
+    @FXML private HBox avatarContainer;
 
-    @FXML
-    private ListView<String> listViewUsuarios;
-
-    @FXML
-    private Button btnAdicionarUsuario;
-
-    // Lista de usuários
-    private final ObservableList<String> usuarios = FXCollections.observableArrayList();
-
-    @FXML
+    @FXML 
     public void initialize() {
-        // Conecta a lista de usuários ao ListView
-        listViewUsuarios.setItems(usuarios);
+        avatarContainer.getChildren().clear();
+    
+        for (User usuario : MainApp.db.getUsers()) {
+            URL avatarImageURL = getClass().getResource(usuario.getPathAvatarImage());
+            
+            Circle avatar = new Circle(25);
+            Image avatarImage = new Image(avatarImageURL.toString());
+            avatar.setFill(new ImagePattern(avatarImage));
+     
+            Label label = new Label(usuario.getUserName().toUpperCase()); 
+            label.setStyle("-fx-text-fill: white; -fx-font-size: 14px;");
+    
+            VBox userBox = new VBox(5); 
+            userBox.setStyle("-fx-alignment: center;");
+            userBox.getChildren().addAll(avatar, label);
+    
+            this.avatarContainer.getChildren().add(userBox);
+    
+            avatar.setOnMouseClicked(event -> {
+                MainApp.setScene("/telaPrincipal.fxml");
+            });
+        }
 
-        // Adiciona ação ao botão
-        btnAdicionarUsuario.setOnAction(event -> adicionarUsuario());
+        addNovoUser();
+    }
+
+    @FXML
+    private void addNovoUser() {
+        URL avatarImageURL = getClass().getResource("/icons8-plus-48.png");
         
-        // Carregar usuários salvos
-        carregarUsuarios();
-    }
+        if (avatarImageURL == null) {
+            System.out.println("Imagem não encontrada.");
+            return;
+        }
 
-    // Método para adicionar um novo usuário
-    private void adicionarUsuario() {
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Adicionar Usuário");
-        dialog.setHeaderText("Novo Usuário");
-        dialog.setContentText("Digite o nome do usuário:");
+        Circle avatar = new Circle(25);
+        Image avatarImage = new Image(avatarImageURL.toString());
+        avatar.setFill(new ImagePattern(avatarImage));
 
-        // Espera entrada do usuário
-        Optional<String> result = dialog.showAndWait();
-        result.ifPresent(nome -> {
-            if (!nome.isBlank()) {
-                usuarios.add(nome);
-                salvarUsuario(nome); // Salvando o novo usuário (se necessário)
-            }
+        Label label = new Label("NOVO");
+        label.setStyle("-fx-text-fill: white; -fx-font-size: 14px;");
+
+        VBox userBox = new VBox(5);
+        userBox.setStyle("-fx-alignment: center;");
+        userBox.getChildren().addAll(avatar, label);
+
+        this.avatarContainer.getChildren().add(userBox);
+
+        avatar.setOnMouseClicked(event -> {
+            MainApp.setScene("/telaInicial.fxml");
         });
-    }
-
-    // Método para carregar usuários salvos (simulado)
-    private void carregarUsuarios() {
-        // Adicione lógica aqui para carregar os usuários de um arquivo ou banco de dados
-        usuarios.addAll("Usuário 1", "Usuário 2", "Usuário 3");
-    }
-
-    // Método para salvar usuários (simulado)
-    private void salvarUsuario(String usuario) {
-        // Adicione lógica para salvar o usuário em um arquivo ou banco de dados
-        System.out.println("Usuário salvo: " + usuario);
     }
 }
 

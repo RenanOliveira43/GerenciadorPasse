@@ -20,12 +20,11 @@ public class TelaPrincipalController {
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getSaldo()));
         gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(0).passagem.getGastoMes()));
         buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(0).passagem.getTipoPassagem().getValor()));
-        System.out.println(MainApp.db.getUsers().get(0).getUserName());
     }
 
     @FXML
-    public void alterarTipoPassagem() {
-        MainApp.setScene("/telaEscolhaPassagem.fxml");
+    public void irTelaConfiguracao() {
+        MainApp.setScene("/telaconfiguracao.fxml");
     }
 
     @FXML

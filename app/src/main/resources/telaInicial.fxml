@@ -19,7 +19,7 @@
                      <Insets />
                   </VBox.margin>
                </Label>
-               <TextField fx:id="nameTextField" alignment="CENTER" promptText="Usuario">
+               <TextField fx:id="nameTextField" alignment="CENTER" promptText="Nome">
                   <VBox.margin>
                      <Insets left="35.0" right="35.0" />
                   </VBox.margin></TextField>
