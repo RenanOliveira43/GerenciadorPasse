@@ -1,0 +1,102 @@
+[Fri Dec 20 20:06:28 GMT-03:00 2024][INFO] ==================== LINK TASK ====================
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/dummy.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/launcher.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/javafx_adapter.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/touch_events.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/glibc_shim.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/attach_adapter.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/logger.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/grandroid.h
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/grandroid_ext.h
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] PB Command for compile-additional-sources: /home/renan/.gluon/substrate/Android/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -c -DSUBSTRATE -target aarch64-linux-android -I. -fPIC -I/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse dummy.c launcher.c javafx_adapter.c touch_events.c glibc_shim.c attach_adapter.c logger.c
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Start process compile-additional-sources...
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] launcher.c:49:12: warning: 'extern' variable has an initializer [-Wextern-initializer]
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] extern int __svm_vm_is_static_binary __attribute__((weak)) = 1;
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]            ^
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] 1 warning generated.
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] javafx_adapter.c:119:5: warning: incompatible pointer types passing 'void **' to parameter of type 'JNIEnv **' (aka 'const struct JNINativeInterface ***') [-Wincompatible-pointer-types]
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]     ATTACH_DALVIK();
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]     ^~~~~~~~~~~~~~~
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] ./grandroid_ext.h:81:56: note: expanded from macro 'ATTACH_DALVIK'
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]     (*dalvikVM)->AttachCurrentThreadAsDaemon(dalvikVM, (void **) &dalvikEnv, NULL); \
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]                                                        ^~~~~~~~~~~~~~~~~~~~
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] javafx_adapter.c:140:5: warning: incompatible pointer types passing 'void **' to parameter of type 'JNIEnv **' (aka 'const struct JNINativeInterface ***') [-Wincompatible-pointer-types]
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]     ATTACH_DALVIK();
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]     ^~~~~~~~~~~~~~~
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] ./grandroid_ext.h:81:56: note: expanded from macro 'ATTACH_DALVIK'
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]     (*dalvikVM)->AttachCurrentThreadAsDaemon(dalvikVM, (void **) &dalvikEnv, NULL); \
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB]                                                        ^~~~~~~~~~~~~~~~~~~~
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] [SUB] 2 warnings generated.
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Result for compile-additional-sources: 0
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] PB Command for link: /home/renan/.gluon/substrate/Android/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/dummy.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/launcher.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/javafx_adapter.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/touch_events.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/glibc_shim.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/attach_adapter.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/logger.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/tmp/SVM-1734735876087/com.mycompany.sample.gerenciadorpasse.mainapp.o -lvmone -Wl,--whole-archive -lprism_es2_monocle -lglass_monocle -ljavafx_font_freetype -ljavafx_iio -Wl,--no-whole-archive -lGLESv2 -lEGL -lfreetype -target aarch64-linux-android21 -fPIC -Wl,--rosegment,--gc-sections,-z,noexecstack -shared -landroid -llog -lz -static-libstdc++ -o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/libGerenciadorPasse.so -L/home/renan/.gluon/substrate/javafxStaticSdk/24-ea+7.1/android-aarch64/sdk/lib -L/home/renan/.gluon/substrate/javaStaticSdk/24-2/android-aarch64/lib -L/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib -Wl,--whole-archive /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libkeyboard.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libutil.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/liblifecycle.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libstorage.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libstatusbar.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libdisplay.a -Wl,--no-whole-archive
+[Fri Dec 20 20:06:28 GMT-03:00 2024][FINE] Start process link...
+[Fri Dec 20 20:06:29 GMT-03:00 2024][FINE] Result for link: 0
+[Fri Dec 20 20:06:29 GMT-03:00 2024][FINE] Logging process [link] to file: /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/log/process-link-1734735989183.log
+[Fri Dec 20 20:10:53 GMT-03:00 2024][INFO] ==================== LINK TASK ====================
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/dummy.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/launcher.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/javafx_adapter.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/touch_events.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/glibc_shim.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/attach_adapter.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/logger.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/grandroid.h
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/grandroid_ext.h
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] PB Command for compile-additional-sources: /home/renan/.gluon/substrate/Android/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -c -DSUBSTRATE -target aarch64-linux-android -I. -fPIC -I/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse dummy.c launcher.c javafx_adapter.c touch_events.c glibc_shim.c attach_adapter.c logger.c
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Start process compile-additional-sources...
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] launcher.c:49:12: warning: 'extern' variable has an initializer [-Wextern-initializer]
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] extern int __svm_vm_is_static_binary __attribute__((weak)) = 1;
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]            ^
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] 1 warning generated.
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] javafx_adapter.c:119:5: warning: incompatible pointer types passing 'void **' to parameter of type 'JNIEnv **' (aka 'const struct JNINativeInterface ***') [-Wincompatible-pointer-types]
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]     ATTACH_DALVIK();
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]     ^~~~~~~~~~~~~~~
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] ./grandroid_ext.h:81:56: note: expanded from macro 'ATTACH_DALVIK'
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]     (*dalvikVM)->AttachCurrentThreadAsDaemon(dalvikVM, (void **) &dalvikEnv, NULL); \
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]                                                        ^~~~~~~~~~~~~~~~~~~~
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] javafx_adapter.c:140:5: warning: incompatible pointer types passing 'void **' to parameter of type 'JNIEnv **' (aka 'const struct JNINativeInterface ***') [-Wincompatible-pointer-types]
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]     ATTACH_DALVIK();
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]     ^~~~~~~~~~~~~~~
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] ./grandroid_ext.h:81:56: note: expanded from macro 'ATTACH_DALVIK'
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]     (*dalvikVM)->AttachCurrentThreadAsDaemon(dalvikVM, (void **) &dalvikEnv, NULL); \
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB]                                                        ^~~~~~~~~~~~~~~~~~~~
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] [SUB] 2 warnings generated.
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Result for compile-additional-sources: 0
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] PB Command for link: /home/renan/.gluon/substrate/Android/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/dummy.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/launcher.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/javafx_adapter.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/touch_events.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/glibc_shim.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/attach_adapter.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/logger.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/tmp/SVM-1734736141903/com.mycompany.sample.gerenciadorpasse.mainapp.o -lvmone -Wl,--whole-archive -lprism_es2_monocle -lglass_monocle -ljavafx_font_freetype -ljavafx_iio -Wl,--no-whole-archive -lGLESv2 -lEGL -lfreetype -target aarch64-linux-android21 -fPIC -Wl,--rosegment,--gc-sections,-z,noexecstack -shared -landroid -llog -lz -static-libstdc++ -o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/libGerenciadorPasse.so -L/home/renan/.gluon/substrate/javafxStaticSdk/24-ea+7.1/android-aarch64/sdk/lib -L/home/renan/.gluon/substrate/javaStaticSdk/24-2/android-aarch64/lib -L/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib -Wl,--whole-archive /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libkeyboard.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libutil.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/liblifecycle.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libstorage.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libstatusbar.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libdisplay.a -Wl,--no-whole-archive
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Start process link...
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Result for link: 0
+[Fri Dec 20 20:10:53 GMT-03:00 2024][FINE] Logging process [link] to file: /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/log/process-link-1734736253870.log
+[Fri Dec 20 20:17:25 GMT-03:00 2024][INFO] ==================== LINK TASK ====================
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/dummy.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/launcher.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/javafx_adapter.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/touch_events.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/glibc_shim.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/attach_adapter.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/logger.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/grandroid.h
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Looking for resource: /native/android/c/grandroid_ext.h
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] PB Command for compile-additional-sources: /home/renan/.gluon/substrate/Android/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -c -DSUBSTRATE -target aarch64-linux-android -I. -fPIC -I/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse dummy.c launcher.c javafx_adapter.c touch_events.c glibc_shim.c attach_adapter.c logger.c
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Start process compile-additional-sources...
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] launcher.c:49:12: warning: 'extern' variable has an initializer [-Wextern-initializer]
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] extern int __svm_vm_is_static_binary __attribute__((weak)) = 1;
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]            ^
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] 1 warning generated.
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] javafx_adapter.c:119:5: warning: incompatible pointer types passing 'void **' to parameter of type 'JNIEnv **' (aka 'const struct JNINativeInterface ***') [-Wincompatible-pointer-types]
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]     ATTACH_DALVIK();
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]     ^~~~~~~~~~~~~~~
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] ./grandroid_ext.h:81:56: note: expanded from macro 'ATTACH_DALVIK'
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]     (*dalvikVM)->AttachCurrentThreadAsDaemon(dalvikVM, (void **) &dalvikEnv, NULL); \
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]                                                        ^~~~~~~~~~~~~~~~~~~~
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] javafx_adapter.c:140:5: warning: incompatible pointer types passing 'void **' to parameter of type 'JNIEnv **' (aka 'const struct JNINativeInterface ***') [-Wincompatible-pointer-types]
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]     ATTACH_DALVIK();
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]     ^~~~~~~~~~~~~~~
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] ./grandroid_ext.h:81:56: note: expanded from macro 'ATTACH_DALVIK'
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]     (*dalvikVM)->AttachCurrentThreadAsDaemon(dalvikVM, (void **) &dalvikEnv, NULL); \
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB]                                                        ^~~~~~~~~~~~~~~~~~~~
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] [SUB] 2 warnings generated.
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Result for compile-additional-sources: 0
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] PB Command for link: /home/renan/.gluon/substrate/Android/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/dummy.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/launcher.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/javafx_adapter.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/touch_events.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/glibc_shim.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/attach_adapter.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/logger.o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/tmp/SVM-1734736526301/com.mycompany.sample.gerenciadorpasse.mainapp.o -lvmone -Wl,--whole-archive -lprism_es2_monocle -lglass_monocle -ljavafx_font_freetype -ljavafx_iio -Wl,--no-whole-archive -lGLESv2 -lEGL -lfreetype -target aarch64-linux-android21 -fPIC -Wl,--rosegment,--gc-sections,-z,noexecstack -shared -landroid -llog -lz -static-libstdc++ -o /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/libGerenciadorPasse.so -L/home/renan/.gluon/substrate/javafxStaticSdk/24-ea+7.1/android-aarch64/sdk/lib -L/home/renan/.gluon/substrate/javaStaticSdk/24-2/android-aarch64/lib -L/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib -Wl,--whole-archive /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libkeyboard.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libutil.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/liblifecycle.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libstorage.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libstatusbar.a /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/lib/libdisplay.a -Wl,--no-whole-archive
+[Fri Dec 20 20:17:25 GMT-03:00 2024][FINE] Start process link...
+[Fri Dec 20 20:17:26 GMT-03:00 2024][FINE] Result for link: 0
+[Fri Dec 20 20:17:26 GMT-03:00 2024][FINE] Logging process [link] to file: /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/log/process-link-1734736646205.log

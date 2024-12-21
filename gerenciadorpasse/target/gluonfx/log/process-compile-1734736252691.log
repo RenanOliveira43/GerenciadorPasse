@@ -1,0 +1,87 @@
+Process
+=======
+compile
+
+Command Line
+============
+/home/renan/Downloads/graalvm-java23-linux-amd64-gluon-23+25.1-dev/bin/native-image -Djdk.internal.lambda.eagerlyInitialize=false --no-server -H:+SharedLibrary -H:+AddAllCharsets -H:+ReportExceptionStackTraces -H:-DeadlockWatchdogExitOnTimeout -H:DeadlockWatchdogInterval=0 -H:+RemoveSaturatedTypeFlows -H:+ExitAfterRelocatableImageWrite -H:TempDirectory=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/tmp -H:EnableURLProtocols=http,https --initialize-at-build-time=com.gluonhq.charm.glisten.visual.MaterialDesignIcon -H:ReflectionConfigurationFiles=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/reflectionconfig-aarch64-android.json -H:JNIConfigurationFiles=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/jniconfig-aarch64-android.json -H:ResourceConfigurationFiles=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/resourceconfig-aarch64-android.json -H:-SpawnIsolates -Dsvm.targetArch=aarch64 -H:+UseCAPCache -H:CAPCacheDir=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/capcache -H:IncludeResourceBundles=com.mycompany.sample.gerenciadorpasse.MainApp,com/sun/javafx/scene/control/skin/resources/controls,com/sun/javafx/scene/control/skin/resources/controls-nt,com.sun.javafx.tk.quantum.QuantumMessagesBundle,com.apple.Cocoa,com.sun.media.jfxmedia.MediaErrors -Dsvm.platform=org.graalvm.nativeimage.Platform$LINUX_AARCH64 -cp /home/renan/.m2/repository/com/gluonhq/substrate/0.0.64/substrate-0.0.64.jar:/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/tmp/classpathJar.jar com.mycompany.sample.gerenciadorpasse.MainApp
+
+Output
+======
+Warning: Ignoring server-mode native-image argument --no-server.
+Warning: The option '-H:+UseCAPCache' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:IncludeResourceBundles=com.mycompany.sample.gerenciadorpasse.MainApp,com/sun/javafx/scene/control/skin/resources/controls,com/sun/javafx/scene/control/skin/resources/controls-nt,com.sun.javafx.tk.quantum.QuantumMessagesBundle,com.apple.Cocoa,com.sun.media.jfxmedia.MediaErrors' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:TempDirectory=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/tmp' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:-DeadlockWatchdogExitOnTimeout' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:DeadlockWatchdogInterval=0' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:+RemoveSaturatedTypeFlows' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:-SpawnIsolates' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:JNIConfigurationFiles=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/jniconfig-aarch64-android.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:+ExitAfterRelocatableImageWrite' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:ReflectionConfigurationFiles=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/reflectionconfig-aarch64-android.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:EnableURLProtocols=http,https' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:ResourceConfigurationFiles=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/resourceconfig-aarch64-android.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:+SharedLibrary' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:CAPCacheDir=/home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/capcache' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+Warning: Option 'SpawnIsolates' is deprecated and might be removed in a future release: This option disables a major feature of GraalVM Native Image and will be removed in a future release. Please refer to the GraalVM release notes.
+========================================================================================================================
+GraalVM Native Image: Generating 'com.mycompany.sample.gerenciadorpasse.mainapp' (shared library)...
+========================================================================================================================
+For detailed information and explanations on the build output, visit:
+https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+------------------------------------------------------------------------------------------------------------------------
+[1/8] Initializing...                                                                                    (5.7s @ 0.12GB)
+ Java version: 23+25, vendor version: GraalVM CE 23-dev+25.1
+ Graal compiler: optimization level: 2, target machine: armv8-a
+ Garbage collector: Serial GC (max heap size: 80% of RAM)
+ 1 user-specific feature(s):
+ - com.oracle.svm.thirdparty.gson.GsonFeature
+------------------------------------------------------------------------------------------------------------------------
+ 14 experimental option(s) unlocked:
+ - '-H:+UseCAPCache' (origin(s): command line)
+ - '-H:CAPCacheDir' (origin(s): command line)
+ - '-H:DeadlockWatchdogInterval' (origin(s): command line)
+ - '-H:-DeadlockWatchdogExitOnTimeout' (origin(s): command line)
+ - '-H:ReflectionConfigurationFiles': Use a reflect-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+ - '-H:ResourceConfigurationFiles': Use a resource-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+ - '-H:JNIConfigurationFiles': Use a jni-config.json in your META-INF/native-image/<groupID>/<artifactID> directory instead. (origin(s): command line)
+ - '-H:+RemoveSaturatedTypeFlows' (origin(s): command line)
+ - '-H:-SpawnIsolates' (origin(s): command line)
+ - '-H:EnableURLProtocols' (alternative API option(s): --enable-http, --enable-https; origin(s): command line)
+ - '-H:+ExitAfterRelocatableImageWrite' (origin(s): command line)
+ - '-H:IncludeResourceBundles' (origin(s): command line)
+ - '-H:+SharedLibrary' (alternative API option(s): --shared; origin(s): command line)
+ - '-H:TempDirectory' (origin(s): command line)
+------------------------------------------------------------------------------------------------------------------------
+Build resources:
+ - 4.38GB of memory (75.6% of 5.80GB system memory, determined at start)
+ - 4 thread(s) (100.0% of 4 available processor(s), determined at start)
+[2/8] Performing analysis...  [******]                                                                  (42.6s @ 1.26GB)
+   12,894 reachable types   (87.8% of   14,692 total)
+   21,333 reachable fields  (57.1% of   37,383 total)
+   62,636 reachable methods (63.1% of   99,244 total)
+    3,623 types,   170 fields, and 2,681 methods registered for reflection
+      114 types,   123 fields, and   194 methods registered for JNI access
+        4 native libraries: dl, pthread, rt, z
+[3/8] Building universe...                                                                               (5.2s @ 1.43GB)
+[4/8] Parsing methods...      [**]                                                                       (4.0s @ 1.53GB)
+[5/8] Inlining methods...     [****]                                                                     (3.2s @ 1.74GB)
+[6/8] Compiling methods...    [******]                                                                  (40.8s @ 1.33GB)
+[7/8] Laying out methods...   [**]                                                                       (4.7s @ 1.78GB)
+
+------------------------------------------------------------------------------------------------------------------------
+                       10.5s (9.0% of total time) in 1058 GCs | Peak RSS: 3.02GB | CPU load: 3.25
+------------------------------------------------------------------------------------------------------------------------
+Build artifacts:
+ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/com.mycompany.sample.gerenciadorpasse.mainapp.h (c_header)
+ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/com.mycompany.sample.gerenciadorpasse.mainapp_dynamic.h (c_header)
+ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/graal_isolate.h (c_header)
+ /home/renan/Documents/GerenciadorPasse/gerenciadorpasse/target/gluonfx/aarch64-android/gvm/GerenciadorPasse/graal_isolate_dynamic.h (c_header)
+========================================================================================================================
+Finished generating 'com.mycompany.sample.gerenciadorpasse.mainapp' in 1m 54s.
+
+
+Result
+======
+result: 0
