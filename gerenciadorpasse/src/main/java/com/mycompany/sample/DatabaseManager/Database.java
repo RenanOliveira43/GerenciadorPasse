@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.mycompany.sample.exceptions.UnsupportedObjectTypeException;
 import com.mycompany.sample.gerenciadorpasse.*;
 
+
 @XmlRootElement(name="database")
 public class Database {
     private List<User> users = new ArrayList<>();
