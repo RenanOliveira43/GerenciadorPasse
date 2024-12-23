@@ -2,7 +2,7 @@
 <database>
     <usuarios>
         <usuario>
-            <isFirstAccess>true</isFirstAccess>
+            <isFirstAccess>false</isFirstAccess>
             <passagem>
                 <gastoMes>2.7300000190734863</gastoMes>
                 <gastoTotal>0.0</gastoTotal>
@@ -13,7 +13,7 @@
             <userName>Renan</userName>
         </usuario>
         <usuario>
-            <isFirstAccess>true</isFirstAccess>
+            <isFirstAccess>false</isFirstAccess>
             <passagem>
                 <gastoMes>32.69999885559082</gastoMes>
                 <gastoTotal>0.0</gastoTotal>
