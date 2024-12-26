@@ -14,12 +14,13 @@
       <VBox alignment="CENTER">
          <children>
               <VBox alignment="CENTER" spacing="20.0">
-                  <Label styleClass="title" text="Bem-vindo!">
+               <Label fx:id="welcomeLabel" styleClass="title" />
+                  <Label styleClass="title" text="Crie um novo perfil">
                   <VBox.margin>
                      <Insets />
                   </VBox.margin>
                </Label>
-               <TextField fx:id="nameTextField"  promptText="Nome">
+               <TextField fx:id="nameTextField" promptText="Nome">
                   <VBox.margin>
                      <Insets left="35.0" right="35.0" />
                   </VBox.margin></TextField>

@@ -12,15 +12,15 @@
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="370.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sample.gerenciadorpasse.TelaPrincipalController">
     <center>
-        <VBox alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="100.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="370.0" spacing="15.0">
+            <HBox alignment="CENTER" maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#somarValor" prefWidth="160.0" text="Somar valor" />
                   <Button fx:id="buttonLabel" mnemonicParsing="false" onAction="#subtrairValorPassagem" prefWidth="160.0" text="Subtrair R$" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+            <HBox alignment="CENTER" maxHeight="100.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#alterarParaValorPersonalizado" prefWidth="160.0" text="Alterar valor" />
                   <Button mnemonicParsing="false" prefWidth="160.0" text="Estatística" />
@@ -46,11 +46,11 @@
          </children></StackPane>
     </bottom>
    <top>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="TOP_RIGHT">
+            <HBox alignment="CENTER">
                <children>
-                  <VBox fx:id="vboxSaldo" prefHeight="200.0" prefWidth="165.0" stylesheets="@style.css">
+                  <VBox fx:id="vboxSaldo" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="165.0" stylesheets="@style.css">
                      <children>
                         <Label prefHeight="32.0" prefWidth="150.0" text="Saldo disponível">
                            <VBox.margin>
@@ -67,10 +67,10 @@
                         </Label>
                      </children>
                      <HBox.margin>
-                        <Insets />
+                        <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
                   </VBox>
-                  <VBox fx:id="vboxSaldo1" alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="165.0" stylesheets="@style.css">
+                  <VBox fx:id="vboxSaldo1" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="165.0" stylesheets="@style.css">
                      <children>
                         <Label prefHeight="32.0" prefWidth="150.0" text="Gasto no mês">
                            <VBox.margin>
@@ -87,7 +87,7 @@
                         </Label>
                      </children>
                      <HBox.margin>
-                        <Insets />
+                        <Insets bottom="20.0" top="20.0" />
                      </HBox.margin>
                   </VBox>
                </children>
