@@ -1,0 +1,13 @@
+{
+  "usuarios" : [ {
+    "userName" : "Renan",
+    "isFirstAccess" : true,
+    "passagem" : {
+      "tipoPassagem" : "UNIVERSITARIO",
+      "saldo" : 100.0,
+      "gastoMes" : 0.0,
+      "gastoTotal" : 0.0
+    },
+    "pathAvatarImagem" : "/rabbit.png"
+  } ]
+}

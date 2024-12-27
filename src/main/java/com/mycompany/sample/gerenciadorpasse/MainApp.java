@@ -29,20 +29,19 @@ public class MainApp extends Application {
         primaryStage.show();
     }
     
+    public static void setScene(String fxml) {
+        try {
+            Parent root = FXMLLoader.load(MainApp.class.getResource(fxml));
 
-public static void setScene(String fxml) {
-    try {
-        Parent root = FXMLLoader.load(MainApp.class.getResource(fxml));
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            Scene scene = new Scene(root, screenBounds.getWidth(), screenBounds.getHeight());
 
-        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        Scene scene = new Scene(root, screenBounds.getWidth(), screenBounds.getHeight());
-
-        scene.getStylesheets().add(MainApp.class.getResource("/style.css").toExternalForm());
-        stage.setScene(scene);
-    } catch(Exception e) {
-        e.printStackTrace();
+            scene.getStylesheets().add(MainApp.class.getResource("/style.css").toExternalForm());
+            stage.setScene(scene);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
-}
 
     public static void main(String[] args) {
         launch(args);

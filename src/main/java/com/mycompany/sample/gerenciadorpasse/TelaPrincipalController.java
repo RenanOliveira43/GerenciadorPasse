@@ -27,7 +27,7 @@ public class TelaPrincipalController {
     @FXML
     public void initialize() {
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
-        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
+        //gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
         buttonLabel.setText(String.format("Subtrair R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor()));
         loadUserAvatar();
     }
@@ -94,7 +94,7 @@ public class TelaPrincipalController {
         MainApp.db.update(MainApp.db.getUsers().get(0));
         
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
-        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
+        //gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
     }
 
     @FXML

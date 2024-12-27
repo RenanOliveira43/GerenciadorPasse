@@ -1,7 +1,6 @@
 /* Root Style */
 .root {
     -fx-background-color: #2E2E2E;
-    -fx-text-fill: white;
 }
 
 /* Title Styles */
@@ -83,4 +82,10 @@
     -fx-padding: 7px;                 
     -fx-border-radius: 20px;            
     -fx-background-radius: 20px;    
+}
+
+#vboxSaldo {
+    -fx-background-color: #555555;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 2);
 }
