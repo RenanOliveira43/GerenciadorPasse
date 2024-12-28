@@ -1,7 +1,6 @@
 package com.mycompany.sample.gerenciadorpasse;
 
 import java.net.URL;
-
 import com.gluonhq.charm.glisten.control.TextField;
 
 import javafx.fxml.FXML;
@@ -87,13 +86,12 @@ public class TelaPrincipalController {
 
     @FXML
     private void subtrairValorPassagem() {
-        MainApp.db.getUsers().get(indexUsuarioAtual).passagem.subtrairValorPassagem();;
+        MainApp.db.getUsers().get(indexUsuarioAtual).passagem.subtrairValorPassagem();
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.somarGastoMes(MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor());
 
         MainApp.db.update(MainApp.db.getUsers().get(0));
         
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
-        //gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
     }
 
     @FXML

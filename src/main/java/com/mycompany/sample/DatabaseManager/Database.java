@@ -31,7 +31,7 @@ public class Database {
             file = new File(privateStorage, "database.json");
         } else {
             String currentDirectory = System.getProperty("user.dir");
-            File dataDirectory = new File(currentDirectory, "Data");
+            File dataDirectory = new File(currentDirectory, "data");
     
             if (!dataDirectory.exists()) {
                 dataDirectory.mkdirs();

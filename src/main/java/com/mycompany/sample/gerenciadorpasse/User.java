@@ -3,20 +3,13 @@ package com.mycompany.sample.gerenciadorpasse;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-@JsonTypeName("usuario") // Define o tipo principal no JSON
+@JsonTypeName("usuario")
 public class User {
-    @JsonProperty("userName")
     protected String userName;
-
-    @JsonProperty("isFirstAccess")
     protected boolean isFirstAccess;
-
-    @JsonProperty("passagem")
     protected Passagem passagem;
-
-    @JsonProperty("pathAvatarImagem")
     protected String pathAvatarImagem;
-
+    
     public User(String userName) {
         this.userName = userName;
         this.passagem = new Passagem();

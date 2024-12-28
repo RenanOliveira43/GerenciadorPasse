@@ -143,6 +143,7 @@
                         <list>com.mycompany.sample.gerenciadorpasse.TelaEscolhaPassagemController</list>
                         <list>com.mycompany.sample.gerenciadorpasse.TelaEscolhaUsuarioController</list>
                         <list>com.mycompany.sample.gerenciadorpasse.TelaPrincipalController</list>
+                        <list>com.mycompany.sample.gerenciadorpasse.TelaEstatisticaController</list>
                         <list>com.mycompany.sample.gerenciadorpasse.User</list>
                         <list>com.mycompany.sample.gerenciadorpasse.Passagem</list>
                         <list>com.mycompany.sample.DatabaseManager.Database</list>

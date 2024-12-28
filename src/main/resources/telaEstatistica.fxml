@@ -35,6 +35,29 @@
                   <Insets left="20.0" />
                </padding>
             </VBox>
+            <VBox fx:id="gastoTotalVbox" prefHeight="100.0" prefWidth="330.0" spacing="4.0">
+               <children>
+                  <Label text="Gasto total">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="gastoTotalLabel" text="R$">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </VBox>
             <VBox fx:id="passagemVbox" prefHeight="100.0" prefWidth="330.0" spacing="4.0">
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
@@ -60,7 +83,7 @@
             </VBox>
             <VBox fx:id="diasRestantesVbox" prefHeight="100.0" prefWidth="100.0" spacing="4.0">
                <children>
-                  <Label text="Dias restantes">
+                  <Label text="Data máxima de uso">
                      <VBox.margin>
                         <Insets top="25.0" />
                      </VBox.margin>
