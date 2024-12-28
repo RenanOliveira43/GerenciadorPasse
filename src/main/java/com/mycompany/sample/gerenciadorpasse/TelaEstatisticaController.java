@@ -55,15 +55,4 @@ public class TelaEstatisticaController {
             gastoTotalLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoTotal()));
         }
     }
-
-    @FXML
-    public void resetGastos() {
-        MainApp.db.getUsers().get(indexUsuarioAtual).passagem.setGastoMes(0);
-        MainApp.db.getUsers().get(indexUsuarioAtual).passagem.setGastoTotal(0);
-
-        gastoTotalLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoTotal()));
-        gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
-
-        MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
-    }
 }

@@ -12,7 +12,7 @@
     <center>
         <VBox alignment="CENTER" spacing="20.0">
          <children>
-            <VBox fx:id="gastoVbox" onMouseClicked="#resetGastos" prefHeight="100.0" prefWidth="330.0" spacing="4.0">
+            <VBox fx:id="gastoVbox" prefHeight="100.0" prefWidth="330.0" spacing="4.0">
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
@@ -35,7 +35,7 @@
                   <Insets left="20.0" />
                </padding>
             </VBox>
-            <VBox fx:id="gastoTotalVbox" onMouseClicked="#resetGastos" prefHeight="100.0" prefWidth="330.0" spacing="4.0">
+            <VBox fx:id="gastoTotalVbox" prefHeight="100.0" prefWidth="330.0" spacing="4.0">
                <children>
                   <Label text="Gasto total">
                      <VBox.margin>
