@@ -4,6 +4,7 @@ import java.net.URL;
 import com.gluonhq.charm.glisten.control.TextField;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -18,9 +19,8 @@ public class TelaPrincipalController {
     @FXML private Button buttonLabel;
     @FXML private Button configButton;
     @FXML private TextField valorTextField;
-    @FXML private VBox teste;
-    @FXML private HBox avatarContainer;
-    
+    @FXML private VBox vboxInputField;
+    @FXML private HBox avatarContainer;    
     private int indexUsuarioAtual = MainApp.indexUsuarioAtual;
 
     @FXML
@@ -40,8 +40,15 @@ public class TelaPrincipalController {
         TextField inputField = new TextField();
         inputField.setPromptText("Digite o valor");
         Button confirmarButton = new Button("Confirmar");
+        Button cancelButton = new Button("Cancelar");
     
-        teste.getChildren().addAll(inputField, confirmarButton);
+        confirmarButton.setStyle("-fx-font-size: 10px");
+        cancelButton.setStyle("-fx-font-size: 10px");
+
+        HBox buttonBox = new HBox(10, confirmarButton, cancelButton);
+        buttonBox.setAlignment(Pos.CENTER);
+
+        vboxInputField.getChildren().addAll(inputField, buttonBox);
     
         confirmarButton.setOnAction(event -> {
             try {
@@ -52,10 +59,14 @@ public class TelaPrincipalController {
     
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
-                teste.getChildren().removeAll(inputField, confirmarButton);
+                vboxInputField.getChildren().removeAll(inputField, buttonBox);
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
             }
+        });
+
+        cancelButton.setOnAction(event -> {
+            vboxInputField.getChildren().removeAll(inputField, buttonBox);
         });
     }
 
@@ -64,23 +75,32 @@ public class TelaPrincipalController {
         TextField inputField = new TextField();
         inputField.setPromptText("Digite o valor");
         Button confirmarButton = new Button("Confirmar");
-    
-        teste.getChildren().addAll(inputField, confirmarButton);
-    
+        Button cancelButton = new Button("Cancelar");
+
+        confirmarButton.setStyle("-fx-font-size: 10px");
+        cancelButton.setStyle("-fx-font-size: 10px");
+
+        HBox buttonBox = new HBox(10, confirmarButton, cancelButton);
+        buttonBox.setAlignment(Pos.CENTER);
+
+        vboxInputField.getChildren().addAll(inputField, buttonBox);
+
         confirmarButton.setOnAction(event -> {
             try {
                 double valor = Double.parseDouble(inputField.getText());
-    
                 MainApp.db.getUsers().get(indexUsuarioAtual).passagem.alterarParaValorPersonalizado(valor);
                 MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
-    
+
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
-    
-                teste.getChildren().removeAll(inputField, confirmarButton);
+                vboxInputField.getChildren().removeAll(inputField, buttonBox);
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
             }
+        });
+
+        cancelButton.setOnAction(event -> {
+            vboxInputField.getChildren().removeAll(inputField, buttonBox);
         });
     }
 

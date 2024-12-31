@@ -37,7 +37,6 @@ public class TelaEscolhaUsuarioController {
             final int idx = i;
 
             avatar.setOnMouseClicked(event -> {
-                //MainApp.setindexUsuarioAtual(idx);
                 MainApp.indexUsuarioAtual = idx;
                 MainApp.setScene("/telaPrincipal.fxml");
             });
@@ -66,7 +65,7 @@ public class TelaEscolhaUsuarioController {
         userBox.setStyle("-fx-alignment: center;");
         userBox.getChildren().addAll(avatar, label);
 
-        this.avatarContainer.getChildren().add(userBox);
+        avatarContainer.getChildren().add(userBox);
 
         avatar.setOnMouseClicked(event -> {
             if (MainApp.db.getUsers().size() < 4) {
