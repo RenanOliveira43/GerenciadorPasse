@@ -17,4 +17,9 @@ public class TelaConfiguracaoController {
     public void irTelaTrocaUsuario() {
         MainApp.setScene("/telaEscolhaUsuario.fxml");
     }
+
+    @FXML
+    public void irTelaEscolhaAvatar() {
+        MainApp.setScene("/telaEscolhaAvatar.fxml");
+    }
 }

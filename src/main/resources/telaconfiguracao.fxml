@@ -12,6 +12,7 @@
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#irTelaTrocaUsuario" prefWidth="160.0" text="Trocar perfil" />
+                  <Button mnemonicParsing="false" onAction="#irTelaEscolhaAvatar" prefWidth="160.0" text="Trocar avatar" />
                   <Button mnemonicParsing="false" onAction="#irTelaEscolhaPassagem" prefWidth="160.0" text="Tipo passagem" />
                </children>
             </VBox>

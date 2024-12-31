@@ -92,7 +92,7 @@ public class TelaEscolhaUsuarioController {
         footerHbox.getChildren().add(editImagCircle);
 
         editImagCircle.setOnMouseClicked(event -> {
-            
+            MainApp.setScene("/");
         });
     }
 }
