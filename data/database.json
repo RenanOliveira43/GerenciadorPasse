@@ -4,12 +4,48 @@
     "userName" : "Renan",
     "passagem" : {
       "tipoPassagem" : "UNIVERSITARIO",
-      "saldo" : 2.1999996948242213,
-      "gastoMes" : 139.2300009727478,
-      "gastoTotal" : 139.2300009727478,
+      "saldo" : 37.689999942779544,
+      "gastoMes" : 8.190000057220459,
+      "gastoTotal" : 8.190000057220459,
       "mesAtual" : 12,
       "anoAtual" : 2024
     },
-    "pathAvatarImagem" : "/rabbit.png"
+    "pathAvatarImagem" : "/bear.png"
+  }, {
+    "isFirstAccess" : true,
+    "userName" : "Teste1",
+    "passagem" : {
+      "tipoPassagem" : "COMUM",
+      "saldo" : 83.85000133514404,
+      "gastoMes" : 38.14999866485596,
+      "gastoTotal" : 38.14999866485596,
+      "mesAtual" : 12,
+      "anoAtual" : 2024
+    },
+    "pathAvatarImagem" : "/chicken.png"
+  }, {
+    "isFirstAccess" : true,
+    "userName" : "Teste2",
+    "passagem" : {
+      "tipoPassagem" : "UNIVERSITARIO",
+      "saldo" : 72.85999965667725,
+      "gastoMes" : 49.140000343322754,
+      "gastoTotal" : 49.140000343322754,
+      "mesAtual" : 12,
+      "anoAtual" : 2024
+    },
+    "pathAvatarImagem" : "/meerkat.png"
+  }, {
+    "isFirstAccess" : true,
+    "userName" : "Teste3",
+    "passagem" : {
+      "tipoPassagem" : "UNIVERSITARIO",
+      "saldo" : 1048.1999988555908,
+      "gastoMes" : 163.80000114440918,
+      "gastoTotal" : 163.80000114440918,
+      "mesAtual" : 12,
+      "anoAtual" : 2024
+    },
+    "pathAvatarImagem" : "/chicken.png"
   } ]
 }

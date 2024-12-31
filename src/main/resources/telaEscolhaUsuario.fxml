@@ -10,7 +10,7 @@
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="370.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.sample.gerenciadorpasse.TelaEscolhaUsuarioController">
     <center>
         <VBox alignment="CENTER" spacing="20.0">
-            <Label  styleClass="title" text="Quem está usando?">
+            <Label styleClass="title" text="Quem está usando?">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
@@ -20,6 +20,9 @@
         </VBox>
     </center>
     <bottom>
-        <StackPane prefHeight="50.0" styleClass="footer" />
+        <StackPane prefHeight="50.0" styleClass="footer">
+         <children>
+            <HBox fx:id="footerHbox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+         </children></StackPane>
     </bottom>
 </View>

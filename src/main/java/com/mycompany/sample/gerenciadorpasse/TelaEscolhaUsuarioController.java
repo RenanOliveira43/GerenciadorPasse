@@ -13,6 +13,7 @@ import javafx.scene.shape.Circle;
 public class TelaEscolhaUsuarioController {
     @FXML private HBox avatarContainer;
     @FXML private Label errorLabel;
+    @FXML private HBox footerHbox;
 
     @FXML 
     public void initialize() {
@@ -43,6 +44,7 @@ public class TelaEscolhaUsuarioController {
         }
 
         addNovoUser();
+        loadEditAvatar();
     }
     
     @FXML
@@ -76,6 +78,21 @@ public class TelaEscolhaUsuarioController {
                 errorLabel.setText("Número máximo de usuários");
             }
 
+        });
+    }
+
+    @FXML
+    private void loadEditAvatar() {
+        URL editImaUrl = getClass().getResource("/pencil.png");
+
+        Circle editImagCircle = new Circle(20);
+        Image editImage = new Image(editImaUrl.toString());
+        editImagCircle.setFill(new ImagePattern(editImage));
+        
+        footerHbox.getChildren().add(editImagCircle);
+
+        editImagCircle.setOnMouseClicked(event -> {
+            
         });
     }
 }
