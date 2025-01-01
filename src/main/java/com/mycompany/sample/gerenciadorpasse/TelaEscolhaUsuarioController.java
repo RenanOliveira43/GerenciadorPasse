@@ -19,7 +19,7 @@ public class TelaEscolhaUsuarioController {
     public void initialize() {
         loadUserAvatar();
         addNovoUser();
-        loadEditAvatar();
+        //loadEditAvatar();
     }
     
     @FXML
@@ -85,6 +85,7 @@ public class TelaEscolhaUsuarioController {
         });
     }
 
+    /* todo: come up with a way to make this work. Generates an edit icon that leads to an user edit screen. 
     @FXML
     private void loadEditAvatar() {
         URL editImaUrl = getClass().getResource("/pencil.png");
@@ -99,4 +100,5 @@ public class TelaEscolhaUsuarioController {
             MainApp.setScene("/");
         });
     }
+    */
 }

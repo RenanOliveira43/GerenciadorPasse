@@ -1,6 +1,5 @@
 package com.mycompany.sample.gerenciadorpasse;
 
-
 import java.net.URL;
 import java.util.List;
 
@@ -19,15 +18,15 @@ public class TelaEscolhaAvatarController {
     @FXML private Label confirmationLabel;
 
     private int indexUsuarioAtual = MainApp.indexUsuarioAtual;
-    
-    @FXML
-    public void voltarTelaConfiguracao() {
-        MainApp.setScene("/telaconfiguracao.fxml");
-    }
 
     @FXML
     public void initialize() {
         loadAvatarImages();
+    }
+    
+    @FXML
+    public void voltarTelaConfiguracao() {
+        MainApp.setScene("/telaconfiguracao.fxml");
     }
 
     @FXML
