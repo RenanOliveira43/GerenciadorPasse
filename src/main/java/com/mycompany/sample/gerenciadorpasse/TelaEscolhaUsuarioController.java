@@ -17,6 +17,13 @@ public class TelaEscolhaUsuarioController {
 
     @FXML 
     public void initialize() {
+        loadUserAvatar();
+        addNovoUser();
+        loadEditAvatar();
+    }
+    
+    @FXML
+    private void loadUserAvatar() {
         for (int i = 0; i < MainApp.db.getUsers().size(); i++) {
             User usuario = MainApp.db.getUsers().get(i);
         
@@ -42,11 +49,8 @@ public class TelaEscolhaUsuarioController {
                 MainApp.setScene("/telaPrincipal.fxml");
             });
         }
-
-        addNovoUser();
-        loadEditAvatar();
     }
-    
+
     @FXML
     private void addNovoUser() {
         URL avatarImageURL = getClass().getResource("/icons8-plus-48.png");
@@ -96,4 +100,3 @@ public class TelaEscolhaUsuarioController {
         });
     }
 }
-

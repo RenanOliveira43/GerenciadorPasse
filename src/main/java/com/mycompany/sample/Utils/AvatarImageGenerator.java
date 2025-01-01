@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RandomAvatarImageGenerator {
+public class AvatarImageGenerator {
     private List<String> imagesUrl;
 
-    public RandomAvatarImageGenerator() {
+    public AvatarImageGenerator() {
         imagesUrl = new ArrayList<>();
         imagesUrl.add("/bear.png");
         imagesUrl.add("/chicken.png");
@@ -25,5 +25,9 @@ public class RandomAvatarImageGenerator {
         }
         
         return imagesUrl.remove(0);
+    }
+
+    public List<String> getImageList() {
+        return imagesUrl;
     }
 }

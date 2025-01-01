@@ -10,7 +10,7 @@
       "mesAtual" : 12,
       "anoAtual" : 2024
     },
-    "pathAvatarImagem" : "/bear.png"
+    "pathAvatarImagem" : "/meerkat.png"
   }, {
     "isFirstAccess" : true,
     "userName" : "Teste1",
@@ -22,7 +22,7 @@
       "mesAtual" : 12,
       "anoAtual" : 2024
     },
-    "pathAvatarImagem" : "/chicken.png"
+    "pathAvatarImagem" : "/panda.png"
   }, {
     "isFirstAccess" : true,
     "userName" : "Teste2",
@@ -34,7 +34,7 @@
       "mesAtual" : 12,
       "anoAtual" : 2024
     },
-    "pathAvatarImagem" : "/meerkat.png"
+    "pathAvatarImagem" : "/bear.png"
   }, {
     "isFirstAccess" : true,
     "userName" : "Teste3",

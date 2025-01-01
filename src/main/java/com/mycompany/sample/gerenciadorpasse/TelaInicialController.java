@@ -2,7 +2,7 @@ package com.mycompany.sample.gerenciadorpasse;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import com.mycompany.sample.Utils.RandomAvatarImageGenerator;
+import com.mycompany.sample.Utils.AvatarImageGenerator;
 import javafx.fxml.FXML;
 
 public class TelaInicialController {    
@@ -25,7 +25,7 @@ public class TelaInicialController {
 
     @FXML
     public void createUser() {
-        RandomAvatarImageGenerator ran = new RandomAvatarImageGenerator();
+        AvatarImageGenerator ran = new AvatarImageGenerator();
         user = new User(nameTextField.getText());
         
         String newImage = ran.getImageUrl();
