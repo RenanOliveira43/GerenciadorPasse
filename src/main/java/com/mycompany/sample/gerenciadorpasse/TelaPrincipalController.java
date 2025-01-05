@@ -133,7 +133,7 @@ public class TelaPrincipalController {
         avatar.setFill(new ImagePattern(avatarImage));
         
         avatarContainer.setStyle("-fx-alignment: center");
-        this.avatarContainer.getChildren().add(avatar);
+        avatarContainer.getChildren().add(avatar);
 
         avatar.setOnMouseClicked(event -> {
             MainApp.setScene("/telaconfiguracao.fxml");

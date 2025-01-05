@@ -34,7 +34,7 @@ public class TelaEscolhaAvatarController {
         AvatarImageGenerator avatarImage = new AvatarImageGenerator();
         List<String> imageList = avatarImage.getImageList();
 
-        for (int i = 0; i < imageList.size(); i += 2) {
+        for (int i = 0; i < imageList.size(); i += 3) {
             HBox hbox = new HBox();
             hbox.setSpacing(10);
             hbox.setAlignment(Pos.CENTER);
@@ -69,6 +69,24 @@ public class TelaEscolhaAvatarController {
 
                     imageView2.setOnMouseClicked(event -> {
                         MainApp.db.getUsers().get(indexUsuarioAtual).setPathAvatarImagem(imageList.get(idx+1));
+                        MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
+                        confirmationLabel.setText("Imagem definida com sucesso!");
+                    });
+                }
+            }
+
+            if (i + 2 < imageList.size()) {
+                URL imageUrl3 = getClass().getResource(imageList.get(i + 2));
+                if (imageUrl3 != null) {
+                    Image image3 = new Image(imageUrl3.toString());
+                    ImageView imageView3 = new ImageView(image3);
+                    imageView3.setFitWidth(80);
+                    imageView3.setFitHeight(80);
+                    imageView3.setPreserveRatio(true);
+                    hbox.getChildren().add(imageView3);
+
+                    imageView3.setOnMouseClicked(event -> {
+                        MainApp.db.getUsers().get(indexUsuarioAtual).setPathAvatarImagem(imageList.get(idx+2));
                         MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
                         confirmationLabel.setText("Imagem definida com sucesso!");
                     });
