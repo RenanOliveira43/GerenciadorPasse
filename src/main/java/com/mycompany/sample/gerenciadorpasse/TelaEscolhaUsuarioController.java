@@ -19,38 +19,37 @@ public class TelaEscolhaUsuarioController {
     public void initialize() {
         loadUserAvatar();
         addNovoUser();
-        //loadEditAvatar();
     }
-    
+
     @FXML
     private void loadUserAvatar() {
         for (int i = 0; i < MainApp.db.getUsers().size(); i++) {
             User usuario = MainApp.db.getUsers().get(i);
-        
+    
             URL avatarImageURL = getClass().getResource(usuario.getPathAvatarImagem());
-            
+    
             Circle avatar = new Circle(25);
             Image avatarImage = new Image(avatarImageURL.toString());
             avatar.setFill(new ImagePattern(avatarImage));
-        
+    
             Label label = new Label(usuario.getUserName().toUpperCase());
             label.setStyle("-fx-text-fill: white; -fx-font-size: 14px;");
-        
+    
             VBox userBox = new VBox(5);
             userBox.setStyle("-fx-alignment: center");
             userBox.getChildren().addAll(avatar, label);
-        
+    
             this.avatarContainer.getChildren().add(userBox);
-            
-            final int idx = i;
 
+            final int idx = i;
+    
             avatar.setOnMouseClicked(event -> {
                 MainApp.indexUsuarioAtual = idx;
                 MainApp.setScene("/telaPrincipal.fxml");
             });
         }
     }
-
+    
     @FXML
     private void addNovoUser() {
         URL avatarImageURL = getClass().getResource("/icons8-plus-48.png");
@@ -85,20 +84,19 @@ public class TelaEscolhaUsuarioController {
         });
     }
 
-    /* todo: come up with a way to make this work. Generates an edit icon that leads to an user edit screen. 
-    @FXML
-    private void loadEditAvatar() {
-        URL editImaUrl = getClass().getResource("/pencil.png");
+    // todo: come up with a way to make this work. Generates an edit icon that leads to an user edit screen. 
+    // @FXML
+    // private void loadEditAvatar() {
+    //     URL editImaUrl = getClass().getResource("/pencil.png");
 
-        Circle editImagCircle = new Circle(20);
-        Image editImage = new Image(editImaUrl.toString());
-        editImagCircle.setFill(new ImagePattern(editImage));
+    //     Circle editImagCircle = new Circle(20);
+    //     Image editImage = new Image(editImaUrl.toString());
+    //     editImagCircle.setFill(new ImagePattern(editImage));
         
-        footerHbox.getChildren().add(editImagCircle);
+    //     footerHbox.getChildren().add(editImagCircle);
 
-        editImagCircle.setOnMouseClicked(event -> {
-            MainApp.setScene("/");
-        });
-    }
-    */
+    //     editImagCircle.setOnMouseClicked(event -> {
+
+    //     });
+    // }
 }

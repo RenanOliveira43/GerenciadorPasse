@@ -21,7 +21,7 @@ public class AvatarImageGenerator {
 
     public String getImageUrl() {
         if (imagesUrl.isEmpty()) {
-            throw new IllegalStateException("No more unique images available");
+            throw new IllegalStateException("No more images available");
         }
         
         return imagesUrl.remove(0);
