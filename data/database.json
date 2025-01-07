@@ -4,9 +4,9 @@
     "userName" : "Renan",
     "passagem" : {
       "tipoPassagem" : "UNIVERSITARIO",
-      "saldo" : 34.95999992370606,
-      "gastoMes" : 2.7300000190734863,
-      "gastoTotal" : 10.920000076293945,
+      "saldo" : 0.2800015258789088,
+      "gastoMes" : 45.47999858856201,
+      "gastoTotal" : 53.66999864578247,
       "mesAtual" : 1,
       "anoAtual" : 2025
     },
