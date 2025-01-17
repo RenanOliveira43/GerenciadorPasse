@@ -18,8 +18,14 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="200.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#somarValor" prefWidth="160.0" text="Somar valor" />
-                        <Button mnemonicParsing="false" onAction="#alterarParaValorPersonalizado" prefWidth="160.0" text="Alterar valor" />
+                        <Button mnemonicParsing="false" onAction="#somarValor" prefWidth="160.0" text="Somar valor">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#alterarParaValorPersonalizado" prefWidth="160.0" text="Alterar valor">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -27,8 +33,14 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" spacing="10.0">
                      <children>
-                        <Button fx:id="buttonLabel" mnemonicParsing="false" onAction="#subtrairValorPassagem" prefWidth="160.0" text="Subtrair R$" />
-                        <Button mnemonicParsing="false" onAction="#estatisticas" prefWidth="160.0" text="Estatística" />
+                        <Button fx:id="buttonLabel" mnemonicParsing="false" onAction="#subtrairValorPassagem" prefWidth="160.0" text="Subtrair R$">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#estatisticas" prefWidth="160.0" text="Estatísticas">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
