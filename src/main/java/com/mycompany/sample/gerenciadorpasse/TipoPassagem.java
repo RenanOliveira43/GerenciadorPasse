@@ -1,7 +1,7 @@
 package com.mycompany.sample.gerenciadorpasse;
 
 public enum TipoPassagem {
-    COMUM("comum", 5.45f),
+    COMUM("comum", 5.70f),
     ESTUDANTE("estudante", 2.18f),
     UNIVERSITARIO("universitario", 2.73f);
 
