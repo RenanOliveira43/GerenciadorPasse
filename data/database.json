@@ -3,11 +3,11 @@
     "isFirstAccess" : true,
     "userName" : "Renan",
     "passagem" : {
-      "tipoPassagem" : "UNIVERSITARIO",
+      "tipoPassagem" : "COMUM",
       "saldo" : 0.2800015258789088,
-      "gastoMes" : 45.47999858856201,
+      "gastoMes" : 0.0,
       "gastoTotal" : 53.66999864578247,
-      "mesAtual" : 1,
+      "mesAtual" : 2,
       "anoAtual" : 2025
     },
     "pathAvatarImagem" : "/meerkat.png"
