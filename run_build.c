@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
     else {
-        //setenv("GRAALVM_HOME", "/home/renan/Downloads/graalvm", 1);
+        setenv("GRAALVM_HOME", "/home/renan/Downloads/graalvm", 1);
 
         if (strcmp("-b", argv[1]) == 0){
             system(argument_list[0]); // build

@@ -83,6 +83,16 @@ public class Database {
         this.save();
     }
 
+    /** Método para remover um usuário e atualizar o JSON */
+    public void removeUser(User user) {
+        if (users.remove(user)) {
+            this.save(); // Salva a lista após remover
+            System.out.println("Usuário removido e JSON atualizado.");
+        } else {
+            System.err.println("Erro ao remover usuário: " + user.getUserName());
+        }
+    }
+
     private void save() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();

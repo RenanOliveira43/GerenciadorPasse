@@ -23,9 +23,10 @@ public class TelaEscolhaUsuarioController {
 
     @FXML
     private void loadUserAvatar() {
+        avatarContainer.getChildren().clear();
+    
         for (int i = 0; i < MainApp.db.getUsers().size(); i++) {
             User usuario = MainApp.db.getUsers().get(i);
-    
             URL avatarImageURL = getClass().getResource(usuario.getPathAvatarImagem());
     
             Circle avatar = new Circle(25);
@@ -39,13 +40,31 @@ public class TelaEscolhaUsuarioController {
             userBox.setStyle("-fx-alignment: center");
             userBox.getChildren().addAll(avatar, label);
     
-            this.avatarContainer.getChildren().add(userBox);
-
+            avatarContainer.getChildren().add(userBox); 
+    
             final int idx = i;
+            final long[] pressedTime = new long[1]; 
+    
+            avatar.setOnMousePressed(event -> {
+                pressedTime[0] = System.currentTimeMillis();
+            });
+    
+            avatar.setOnMouseReleased(event -> {
+                long duration = System.currentTimeMillis() - pressedTime[0];
+    
+                if (duration > 1000) { 
+                    avatarContainer.getChildren().remove(userBox); 
+                    MainApp.db.removeUser(usuario);
+                }
+            });
     
             avatar.setOnMouseClicked(event -> {
-                MainApp.indexUsuarioAtual = idx;
-                MainApp.setScene("/telaPrincipal.fxml");
+                long duration = System.currentTimeMillis() - pressedTime[0];
+    
+                if (duration < 1000) {
+                    MainApp.indexUsuarioAtual = idx; 
+                    MainApp.setScene("/telaPrincipal.fxml");
+                }
             });
         }
     }
