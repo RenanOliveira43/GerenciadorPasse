@@ -20,9 +20,6 @@ A list of the basic requirements can be found online in the [Gluon documentation
 
     mvn -Pandroid gluonfx:build gluonfx:package gluonfx:install gluonfx:nativerun
 
-### Run the sample as a native iOS image:
-
-    mvn -Pios gluonfx:build gluonfx:package gluonfx:install gluonfx:nativerun
 
 ## Selected features
 
