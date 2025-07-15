@@ -93,7 +93,7 @@ public class TelaEscolhaUsuarioController {
 
         avatar.setOnMouseClicked(event -> {
             if (MainApp.db.getUsers().size() < 4) {
-                MainApp.indexUsuarioAtual++;
+                MainApp.indexUsuarioAtual += 1;
                 MainApp.setScene("/telaInicial.fxml");
             }
             else {
