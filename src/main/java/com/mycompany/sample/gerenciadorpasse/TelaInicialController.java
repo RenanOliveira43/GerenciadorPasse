@@ -35,4 +35,11 @@ public class TelaInicialController {
         
         carregarTelaEscolhaPassagem();
     }
+
+    @FXML
+    public void cancelarAddUser() {
+        if (!MainApp.db.getUsers().isEmpty()) {
+            MainApp.setScene("/telaEscolhaUsuario.fxml");
+        }
+    }
 }

@@ -3,13 +3,37 @@
     "isFirstAccess" : true,
     "userName" : "Renan",
     "passagem" : {
-      "tipoPassagem" : "COMUM",
+      "tipoPassagem" : "UNIVERSITARIO",
       "saldo" : 0.2800015258789088,
       "gastoMes" : 0.0,
       "gastoTotal" : 53.66999864578247,
-      "mesAtual" : 2,
+      "mesAtual" : 8,
       "anoAtual" : 2025
     },
     "pathAvatarImagem" : "/meerkat.png"
+  }, {
+    "isFirstAccess" : true,
+    "userName" : "aaa",
+    "passagem" : {
+      "tipoPassagem" : "ESTUDANTE",
+      "saldo" : 78.0,
+      "gastoMes" : 0.0,
+      "gastoTotal" : 0.0,
+      "mesAtual" : 8,
+      "anoAtual" : 2025
+    },
+    "pathAvatarImagem" : "/meerkat.png"
+  }, {
+    "isFirstAccess" : true,
+    "userName" : "t",
+    "passagem" : {
+      "tipoPassagem" : "COMUM",
+      "saldo" : 77.0,
+      "gastoMes" : 0.0,
+      "gastoTotal" : 0.0,
+      "mesAtual" : 8,
+      "anoAtual" : 2025
+    },
+    "pathAvatarImagem" : "/chicken.png"
   } ]
 }
