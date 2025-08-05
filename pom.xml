@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mycompany</groupId>
-    <artifactId>myapplication</artifactId>
+    <artifactId>gerenciador-passe</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>GerenciadorPasse</name>
+    <name>Passe</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -110,10 +110,10 @@
                 <version>${javafx.plugin.version}</version>
                 <configuration>
                     <mainClass>${main.class}</mainClass>
-                    <sdk>
+                    <!-- <sdk>
                         <path>/home/renan/Android/Sdk</path>
                         <platform>33</platform>
-                    </sdk>
+                    </sdk> -->
                 </configuration>
             </plugin>
             <plugin>
@@ -131,13 +131,12 @@
                         <list>storage</list>
                     </attachList>
                     <bundlesList>
-                        <list>com.mycompany.sample.gerenciadorpasse.MainApp</list>
-                        <list>com.mycompany.sample.gerenciadorpasse.Passagem</list>
-                        <list>com.mycompany.sample.gerenciadorpasse.TipoPassagem</list>
-                        <list>com.mycompany.sample.gerenciadorpasse.User</list>
-                        <list>com.mycompany.sample.exceptions.UnsupportedObjectTypeException</list>
+        
                     </bundlesList>
                     <reflectionList>
+                        <list>com.mycompany.sample.exceptions.UnsupportedObjectTypeException</list>
+                        <list>com.mycompany.sample.gerenciadorpasse.TipoPassagem</list>
+                        <list>com.mycompany.sample.gerenciadorpasse.MainApp</list>
                         <list>com.mycompany.sample.gerenciadorpasse.TelaInicialController</list>
                         <list>com.mycompany.sample.gerenciadorpasse.TelaConfiguracaoController</list>
                         <list>com.mycompany.sample.gerenciadorpasse.TelaEscolhaPassagemController</list>
@@ -149,6 +148,13 @@
                         <list>com.mycompany.sample.gerenciadorpasse.Passagem</list>
                         <list>com.mycompany.sample.DatabaseManager.Database</list>
                     </reflectionList>
+                    <signing>
+                        <storetype>jks</storetype>
+                        <keystore>${user.home}/.android/debug.keystore</keystore>
+                        <storepass>android</storepass>
+                        <keyalias>androiddebugkey</keyalias>
+                        <keypass>android</keypass>
+                    </signing>
                 </configuration>
             </plugin>
         </plugins>

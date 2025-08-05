@@ -27,7 +27,8 @@
               </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#createUser" text="Registrar" />
+                  <Button mnemonicParsing="false" onAction="#createUser" prefWidth="140.0" text="Registrar" />
+                  <Button mnemonicParsing="false" onAction="#cancelarAddUser" prefWidth="140.0" text="Cancelar" />
                </children>
             </HBox>
          </children>
