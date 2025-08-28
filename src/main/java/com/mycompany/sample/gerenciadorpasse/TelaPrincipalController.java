@@ -1,6 +1,8 @@
 package com.mycompany.sample.gerenciadorpasse;
 
 import java.net.URL;
+import java.time.LocalDateTime;
+
 import com.gluonhq.charm.glisten.control.TextField;
 
 import javafx.fxml.FXML;
@@ -108,6 +110,7 @@ public class TelaPrincipalController {
     private void subtrairValorPassagem() {
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.subtrairValorPassagem();
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.somarGastoMes(MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor());
+        MainApp.db.getUsers().get(indexUsuarioAtual).usosPassagem.add(LocalDateTime.now().toString());
 
         MainApp.db.update(MainApp.db.getUsers().get(0));
         
