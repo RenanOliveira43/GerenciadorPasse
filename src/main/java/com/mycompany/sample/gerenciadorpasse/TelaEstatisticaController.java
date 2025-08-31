@@ -30,7 +30,6 @@ public class TelaEstatisticaController {
     private void getUltimoUsoPassagem() {
         String ultimoUso = MainApp.db.getUsers().get(indexUsuarioAtual).getUltimoUsoPassagem();
         if (ultimoUso != null) {
-
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
             ultimoUsoLabel.setText(formatter.format(LocalDateTime.parse(ultimoUso, DateTimeFormatter.ISO_DATE_TIME)));
         } else {

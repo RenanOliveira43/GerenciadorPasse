@@ -105,7 +105,7 @@
             </VBox>
             <VBox fx:id="ultimoUsoLogVbox" prefHeight="100.0" prefWidth="100.0" spacing="4.0">
                 <children>
-                    <Label text="Ultimo uso">
+                    <Label text="Último uso">
                         <VBox.margin>
                         <Insets top="25.0" />
                         </VBox.margin>
