@@ -37,8 +37,14 @@ public class TelaPrincipalController {
         MainApp.setScene("/telaconfiguracao.fxml");
     }
 
+    private int flag = 0;
     @FXML
-    private void somarValor() {
+    private void somarValor() {        
+        if (flag == 1) {
+            return;
+        }
+
+        flag = 1;
         TextField inputField = new TextField();
         inputField.setPromptText("Digite o valor");
         Button confirmarButton = new Button("Confirmar");
@@ -62,6 +68,8 @@ public class TelaPrincipalController {
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
                 vboxInputField.getChildren().removeAll(inputField, buttonBox);
+
+                flag = 0;
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
             }
@@ -69,11 +77,18 @@ public class TelaPrincipalController {
 
         cancelButton.setOnAction(event -> {
             vboxInputField.getChildren().removeAll(inputField, buttonBox);
+            flag = 0;
         });
     }
 
+    private int flag2 = 0;
     @FXML
     private void alterarParaValorPersonalizado() {
+        if (flag2 == 1) {
+            return;
+        }
+        
+        flag2 = 1;
         TextField inputField = new TextField();
         inputField.setPromptText("Digite o valor");
         Button confirmarButton = new Button("Confirmar");
@@ -96,6 +111,8 @@ public class TelaPrincipalController {
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
                 vboxInputField.getChildren().removeAll(inputField, buttonBox);
+
+                flag2 = 0;
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
             }
@@ -103,6 +120,7 @@ public class TelaPrincipalController {
 
         cancelButton.setOnAction(event -> {
             vboxInputField.getChildren().removeAll(inputField, buttonBox);
+            flag2 = 0;
         });
     }
 
