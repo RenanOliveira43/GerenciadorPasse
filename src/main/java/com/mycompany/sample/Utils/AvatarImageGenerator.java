@@ -1,33 +1,29 @@
 package com.mycompany.sample.Utils;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class AvatarImageGenerator {
-    private List<String> imagesUrl;
+    private String[] imagesUrl = {
+        "/bear.png",
+        "/chicken.png",
+        "/dog.png",
+        "/meerkat.png",
+        "/panda.png",
+        "/rabbit.png"
+    };
 
     public AvatarImageGenerator() {
-        imagesUrl = new ArrayList<>();
-        imagesUrl.add("/bear.png");
-        imagesUrl.add("/chicken.png");
-        imagesUrl.add("/dog.png");
-        imagesUrl.add("/meerkat.png");
-        imagesUrl.add("/panda.png");
-        imagesUrl.add("/rabbit.png");
 
-        Collections.shuffle(imagesUrl);
     }
 
     public String getImageUrl() {
-        if (imagesUrl.isEmpty()) {
-            throw new IllegalStateException("No more images available");
-        }
-        
-        return imagesUrl.remove(0);
+        Random random = new Random();
+        int index = random.nextInt(imagesUrl.length);
+        return imagesUrl[index];
     }
 
     public List<String> getImageList() {
-        return imagesUrl;
+        return java.util.Arrays.asList(imagesUrl);
     }
 }

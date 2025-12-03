@@ -31,11 +31,11 @@ public class TelaInicialController {
             return;
         }
         
-        AvatarImageGenerator ran = new AvatarImageGenerator();
+        AvatarImageGenerator avatarGenerator = new AvatarImageGenerator();
         user = new User(name);
         
-        String newImage = ran.getImageUrl();
-        user.setPathAvatarImagem(newImage);
+        String avatarImage = avatarGenerator.getImageUrl();
+        user.setPathAvatarImagem(avatarImage);
         
         MainApp.db.insert(user);
         
