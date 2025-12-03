@@ -86,7 +86,7 @@ public class Database {
     /** Método para remover um usuário e atualizar o JSON */
     public void removeUser(User user) {
         if (users.remove(user)) {
-            this.save(); // Salva a lista após remover
+            this.save(); 
             System.out.println("Usuário removido e JSON atualizado.");
         } else {
             System.err.println("Erro ao remover usuário: " + user.getUserName());

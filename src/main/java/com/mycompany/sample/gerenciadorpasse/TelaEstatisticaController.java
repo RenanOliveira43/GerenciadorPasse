@@ -1,6 +1,7 @@
 package com.mycompany.sample.gerenciadorpasse;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,6 +11,7 @@ public class TelaEstatisticaController {
     @FXML private Label passagensRestantesLabel;
     @FXML private Label diasRestantesLabel;
     @FXML private Label gastoTotalLabel;
+    @FXML private Label ultimoUsoLabel;
 
     private int indexUsuarioAtual = MainApp.indexUsuarioAtual;
     
@@ -17,11 +19,22 @@ public class TelaEstatisticaController {
     public void initialize() {
         gastoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getGastoMes()));
         calculaEstatisticas();
+        getUltimoUsoPassagem();
     }
     
     @FXML
     public void voltarTelaPrincipal() {
         MainApp.setScene("/telaPrincipal.fxml");
+    }
+
+    private void getUltimoUsoPassagem() {
+        String ultimoUso = MainApp.db.getUsers().get(indexUsuarioAtual).getUltimoUsoPassagem();
+        if (ultimoUso != null) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            ultimoUsoLabel.setText(formatter.format(LocalDateTime.parse(ultimoUso, DateTimeFormatter.ISO_DATE_TIME)));
+        } else {
+            ultimoUsoLabel.setText("Nenhum uso registrado");
+        }
     }
 
     private void calculaEstatisticas() {

@@ -25,8 +25,14 @@ public class TelaInicialController {
 
     @FXML
     public void createUser() {
+        String name = nameTextField.getText();
+        if (name.isEmpty()) {
+            welcomeLabel.setText("Por favor, insira um nome válido.");
+            return;
+        }
+        
         AvatarImageGenerator ran = new AvatarImageGenerator();
-        user = new User(nameTextField.getText());
+        user = new User(name);
         
         String newImage = ran.getImageUrl();
         user.setPathAvatarImagem(newImage);

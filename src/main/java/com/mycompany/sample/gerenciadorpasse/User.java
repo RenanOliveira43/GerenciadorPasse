@@ -1,5 +1,9 @@
 package com.mycompany.sample.gerenciadorpasse;
 
+import java.util.List;
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -9,6 +13,7 @@ public class User {
     protected boolean isFirstAccess;
     protected Passagem passagem;
     protected String pathAvatarImagem;
+    protected List<String> usosPassagem= new ArrayList<>();
     
     public User(String userName) {
         this.userName = userName;
@@ -32,6 +37,19 @@ public class User {
     @JsonProperty("pathAvatarImagem")
     public String getPathAvatarImagem() {
         return pathAvatarImagem;
+    }
+
+    @JsonProperty("usosPassagem")
+    public List<String> getUsoPassagem() {
+        return usosPassagem;
+    }
+
+    @JsonIgnore
+    public String getUltimoUsoPassagem() {
+        if (usosPassagem.isEmpty()) {
+            return null;
+        }
+        return usosPassagem.get(usosPassagem.size() - 1);
     }
 
     public void setPathAvatarImagem(String pathAvatarImagem) {

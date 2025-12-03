@@ -105,7 +105,7 @@
 }
 
 /* Containers com sombra e fundo */
-#vboxSaldo, #gastoVbox, #passagemVbox, #diasRestantesVbox, #gastoTotalVbox {
+#vboxSaldo, #gastoVbox, #passagemVbox, #diasRestantesVbox, #gastoTotalVbox, #ultimoUsoLogVbox {
     -fx-background-color: #374151;
     -fx-background-radius: 15px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 2); 

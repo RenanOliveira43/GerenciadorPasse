@@ -1,6 +1,8 @@
 package com.mycompany.sample.gerenciadorpasse;
 
 import java.net.URL;
+import java.time.LocalDateTime;
+
 import com.gluonhq.charm.glisten.control.TextField;
 
 import javafx.fxml.FXML;
@@ -35,8 +37,14 @@ public class TelaPrincipalController {
         MainApp.setScene("/telaconfiguracao.fxml");
     }
 
+    private int flag = 0;
     @FXML
-    private void somarValor() {
+    private void somarValor() {        
+        if (flag == 1) {
+            return;
+        }
+
+        flag = 1;
         TextField inputField = new TextField();
         inputField.setPromptText("Digite o valor");
         Button confirmarButton = new Button("Confirmar");
@@ -60,6 +68,8 @@ public class TelaPrincipalController {
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
                 vboxInputField.getChildren().removeAll(inputField, buttonBox);
+
+                flag = 0;
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
             }
@@ -67,11 +77,18 @@ public class TelaPrincipalController {
 
         cancelButton.setOnAction(event -> {
             vboxInputField.getChildren().removeAll(inputField, buttonBox);
+            flag = 0;
         });
     }
 
+    private int flag2 = 0;
     @FXML
     private void alterarParaValorPersonalizado() {
+        if (flag2 == 1) {
+            return;
+        }
+        
+        flag2 = 1;
         TextField inputField = new TextField();
         inputField.setPromptText("Digite o valor");
         Button confirmarButton = new Button("Confirmar");
@@ -94,6 +111,8 @@ public class TelaPrincipalController {
                 saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
 
                 vboxInputField.getChildren().removeAll(inputField, buttonBox);
+
+                flag2 = 0;
             } catch (NumberFormatException e) {
                 saldoLabel.setText("Valor inválido. Tente novamente.");
             }
@@ -101,6 +120,7 @@ public class TelaPrincipalController {
 
         cancelButton.setOnAction(event -> {
             vboxInputField.getChildren().removeAll(inputField, buttonBox);
+            flag2 = 0;
         });
     }
 
@@ -108,6 +128,7 @@ public class TelaPrincipalController {
     private void subtrairValorPassagem() {
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.subtrairValorPassagem();
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.somarGastoMes(MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor());
+        MainApp.db.getUsers().get(indexUsuarioAtual).usosPassagem.add(LocalDateTime.now().toString());
 
         MainApp.db.update(MainApp.db.getUsers().get(0));
         
