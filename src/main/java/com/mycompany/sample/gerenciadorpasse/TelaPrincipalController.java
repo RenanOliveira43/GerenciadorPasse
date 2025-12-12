@@ -128,10 +128,13 @@ public class TelaPrincipalController {
     private void subtrairValorPassagem() {
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.subtrairValorPassagem();
         MainApp.db.getUsers().get(indexUsuarioAtual).passagem.somarGastoMes(MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getTipoPassagem().getValor());
-        MainApp.db.getUsers().get(indexUsuarioAtual).usosPassagem.add(LocalDateTime.now().toString());
-
-        MainApp.db.update(MainApp.db.getUsers().get(0));
         
+        if (MainApp.db.getUsers().get(indexUsuarioAtual).getPassagem().getSaldo() > 0) {
+            MainApp.db.getUsers().get(indexUsuarioAtual).usosPassagem.add(LocalDateTime.now().toString());
+        }
+
+        MainApp.db.update(MainApp.db.getUsers().get(indexUsuarioAtual));
+
         saldoLabel.setText(String.format("R$ %.2f", MainApp.db.getUsers().get(indexUsuarioAtual).passagem.getSaldo()));
     }
 
